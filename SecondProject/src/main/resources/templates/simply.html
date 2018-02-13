@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    
+    <head>
+        <meta charset="utf-8"/>
+        <title th:text="${pageTitle}">SimplyProject</title> <!-- key "${key}" -->
+        <link rel="stylesheet" th:href="@{css/main.css}"/>
+       
+      
+    </head>
+    
+    <body>
+        <h1 class="Header" th:text="#{header}">SIMPLY IS THE BEST AFTER ALL</h1>
+        <div th:each="c : ${articles}">
+        		<h2 th:text="${c.title}">This is The Header</h2>
+        		<h3 th:text="${c.date}">2018 December 05</h3>
+        		<p th:utext="${c.content}">Fusce rhoncus augue felis, in luctus felis condimentum in. Nunc venenatis tortor in arcu condimentum suscipit. Nunc vulputate vestibulum libero, vel vulputate nisl iaculis ac. Fusce tortor mauris, pharetra eget imperdiet nec, tempor in ex. Praesent pharetra nibh massa, nec molestie lectus molestie in. Sed blandit gravida ligula, ut aliquet tellus. Curabitur et sem sit amet mi mattis porta. Nunc egestas erat velit, at elementum diam gravida sed. Pellentesque aliquet mi et convallis porttitor. Aliquam sed ante scelerisque, hendrerit purus et, condimentum ante. Sed non arcu eleifend, vulputate orci at, tincidunt mauris. Aliquam mattis nulla bibendum elit placerat viverra. Etiam vitae mattis ex. Aenean est ligula, tempus vel congue vitae, pulvinar sed quam. Sed nec sollicitudin lacus. Integer lobortis libero eu velit maximus pulvinar.</p>
+        		<h3 th:text="${c.author}">Author : Jenny</h3>
+        		<hr></hr>
+        </div>
+        
+       <footer>
+       <div id="footer" th:text="#{footer}">This is a footer</div>
+       </footer> 
+    </body>
+    
+</html>

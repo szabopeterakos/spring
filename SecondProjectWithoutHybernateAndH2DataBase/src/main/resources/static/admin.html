@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    
+    <head>
+        <meta charset="utf-8"/>
+        <title th:text="${pageTitle}">SimplyProject</title> <!-- key "${key}" -->
+        <link rel="stylesheet" th:href="@{css/main.css}"/>
+       
+      
+    </head>
+    
+    <body>
+        <h1 class="Header">ADMIN</h1>
+        <p>YOU ARE THE BOSS</p>
+        
+       <footer>
+       <div id="footer" th:text="#{footer}">This is a footer</div>
+       </footer> 
+    </body>
+    
+</html>

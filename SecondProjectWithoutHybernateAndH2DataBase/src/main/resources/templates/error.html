@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    
+    <head>
+        <meta charset="utf-8"/>
+        <title th:text="${pageTitle}">SimplyProject</title> <!-- key "${key}" -->
+        <link rel="stylesheet" th:href="@{css/main.css}"/>
+       
+      
+    </head>
+    
+    <body>
+        <h1 class="Header">ERROR</h1>
+        <div id="err">
+        		<h2 th:text="${path}">path</h2>
+        		<h2 th:text="${error}">This is The Header</h2>
+        		<h3 th:text="${message}">2018 December 05</h3>
+        		<h1 th:text="${status}">2018 December 05</h1>
+        		<p th:text="${time}">2018 December 05</p>
+        </div>
+        
+       <footer>
+       <div id="footer" th:text="#{footer}">This is a footer</div>
+       </footer> 
+    </body>
+    
+</html>
