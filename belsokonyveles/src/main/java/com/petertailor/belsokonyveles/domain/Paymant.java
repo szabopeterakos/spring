@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 
 public enum Paymant {
 
-    KP("készpénz"), U("utalás");
+    KP("KÉSZPÉNZ"), U("UTALÁS");
 
     private String name;
 

@@ -57,7 +57,6 @@ public class IndexController {
 
     @PostMapping("/sentQuery")
     public String queryAnswer(@ModelAttribute QueryString qs, Model m){
-        System.out.println(qs);
         //billService.selectQuery(qs);
         m.addAttribute("queriedBills",billService.querySelector(qs));
         return "querybook";

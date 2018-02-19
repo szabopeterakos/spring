@@ -140,7 +140,7 @@ public class Bill {
 
     public void setPaymant(String paymant) {
         for (Paymant c : Paymant.values()) {
-            if (c.getName().equals(paymant.toLowerCase())) {
+            if (c.getName().equals(paymant.toUpperCase())) {
                 this.paymant = c;
             }
         }

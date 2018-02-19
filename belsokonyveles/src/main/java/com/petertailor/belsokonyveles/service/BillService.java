@@ -97,21 +97,46 @@ public class BillService {
     }
 
     public Iterable<Bill> querySelector(QueryString qs) {
-        if (qs.getTypeQuery().length() == 0 && qs.getParterQuery().length() == 0 && qs.getDateQuery().length() == 0) {
-            //no query silt everithing
+        //trimmed uppercase version
+        QueryString current = new QueryString(qs.getTypeQuery().toUpperCase(),qs.getParterQuery().toUpperCase(),qs.getDateQuery());
+        Date[] dates = null;
+
+        // date string validation against pharse exception
+        if(current.getDateQuery().length()!=0){
+            dates = DateIntervalValidator.intervallCreator(current.getDateQuery());
+        }
+
+        if (current.getTypeQuery().length() == 0 && current.getParterQuery().length() == 0 && current.getDateQuery().length() == 0) {
+            System.out.println("good");
+            //no query silt everything
             return billRepo.findAll();
-        } else if (qs.getTypeQuery().length() != 0 && qs.getParterQuery().length() == 0 && qs.getDateQuery().length() == 0) {
+        } else if (current.getTypeQuery().length() != 0 && current.getParterQuery().length() == 0 && current.getDateQuery().length() == 0) {
             // just type query
-            return billRepo.findAllByPaymentTypeTypeName(qs.getTypeQuery().toUpperCase());
-        } else if (qs.getTypeQuery().length() == 0 && qs.getParterQuery().length() != 0 && qs.getDateQuery().length() == 0) {
+            return billRepo.findAllByPaymentTypeTypeName(current.getTypeQuery().toUpperCase());
+        } else if (current.getTypeQuery().length() == 0 && current.getParterQuery().length() != 0 && current.getDateQuery().length() == 0) {
             //just partner query
-            return billRepo.findAllByPartnerName(qs.getParterQuery().toUpperCase());
-        } else if (qs.getTypeQuery().length() == 0 && qs.getParterQuery().length() == 0 && qs.getDateQuery().length() != 0) {
+            return billRepo.findAllByPartnerName(current.getParterQuery().toUpperCase());
+        } else if (current.getTypeQuery().length() == 0 && current.getParterQuery().length() == 0 && current.getDateQuery().length() != 0) {
             //just date query
-            Date[] dates = DateIntervalValidator.intervallCreator(qs.getDateQuery());
             return billRepo.findAllByReleaseDateBetween(dates[0], dates[1]);
-        } else {
-            return null;
+        }
+
+        else if(current.getTypeQuery().length() != 0 && current.getParterQuery().length() != 0 && current.getDateQuery().length() != 0){
+            // query 3 values
+            return billRepo.findAllByPaymentTypeTypeNameAndPartnerNameAndReleaseDateBetween(current.getTypeQuery().toUpperCase(),current.getParterQuery().toUpperCase(),dates[0],dates[1]);
+        } else if(current.getTypeQuery().length() != 0 && current.getParterQuery().length() != 0 && current.getDateQuery().length() == 0){
+            // query type and partner
+            return billRepo.findAllByPaymentTypeTypeNameAndPartnerName(current.getTypeQuery().toUpperCase(),current.getParterQuery().toUpperCase());
+        } else if(current.getTypeQuery().length() == 0 && current.getParterQuery().length() != 0 && current.getDateQuery().length() != 0){
+            // query partner and interval
+            return billRepo.findAllByPartnerNameAndReleaseDateBetween(current.getParterQuery().toUpperCase(),dates[0],dates[1]);
+        } else if(current.getTypeQuery().length() != 0 && current.getParterQuery().length() == 0 && current.getDateQuery().length() != 0){
+            // query type and interval
+            return billRepo.findAllByPaymentTypeTypeNameAndReleaseDateBetween(current.getTypeQuery().toUpperCase(),dates[0],dates[1]);
+        }
+
+        else {
+            throw new IllegalArgumentException("rosszul számoltam ki a lehetőségeket");
         }
     }
 

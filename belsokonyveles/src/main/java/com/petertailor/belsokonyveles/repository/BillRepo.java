@@ -15,6 +15,7 @@ public interface BillRepo extends CrudRepository<Bill,Long>{
     Iterable<Bill> findAll();
 
     // i i i
+    List<Bill> findAllByPaymentTypeTypeNameAndPartnerNameAndReleaseDateBetween(String type, String partner, Date start, Date end);
 
     // for addbook indexpage
     List<Bill> findTop3ByOrderByIdDesc();
@@ -29,10 +30,13 @@ public interface BillRepo extends CrudRepository<Bill,Long>{
     List<Bill> findAllByReleaseDateBetween(Date start,Date end);
 
     // i i o
+    List<Bill> findAllByPaymentTypeTypeNameAndPartnerName(String type, String partner);
 
     // o i i
+    List<Bill> findAllByPartnerNameAndReleaseDateBetween(String partner,Date start,Date end);
 
     // i o i
+    List<Bill> findAllByPaymentTypeTypeNameAndReleaseDateBetween(String s ,Date start,Date end);
 
     //for test
     List<Bill> findFirstByPartnerName(String s);
