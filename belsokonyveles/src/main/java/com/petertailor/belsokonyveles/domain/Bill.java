@@ -72,14 +72,7 @@ public class Bill {
     }
 
     public void setDeadline(String deadline) {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        Date c = null;
-        try {
-            c = sdf.parse(deadline);
-        } catch (ParseException e) {
-            System.out.println("nem sikerült a deadline dátummá alakitása" + e);
-            e.printStackTrace();
-        }
+        Date c = DateCreater.dateParser(deadline);
         this.deadline = c;
     }
 
@@ -92,14 +85,7 @@ public class Bill {
     }
 
     public void setReleaseDate(String releaseDate) {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        Date c = null;
-        try {
-            c = sdf.parse(releaseDate);
-        } catch (ParseException e) {
-            System.out.println("nem sikerült a deadline dátummá alakitása" + e);
-            e.printStackTrace();
-        }
+        Date c = DateCreater.dateParser(releaseDate);
         this.releaseDate = c;
     }
 

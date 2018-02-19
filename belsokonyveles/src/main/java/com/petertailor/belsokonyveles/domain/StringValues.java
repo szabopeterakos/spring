@@ -6,14 +6,14 @@ import java.util.Date;
 
 public class StringValues {
 
-    private String deadline;
-    private String releaseDate;
-    private String partner;
-    private String voucherNumber;
-    private String amount;
-    private String paymentType;
-    private String notes;
-    private String paymant;
+    private String deadline = "";
+    private String releaseDate = "";
+    private String partner = "";
+    private String voucherNumber = "";
+    private String amount = "";
+    private String paymentType = "";
+    private String notes = "";
+    private String paymant = "";
 
     public StringValues() {
     }
@@ -100,5 +100,19 @@ public class StringValues {
 
     public void setPaymant(String paymant) {
         this.paymant = paymant;
+    }
+
+    @Override
+    public String toString() {
+        return "StringValues{" +
+                "deadline='" + deadline + '\'' +
+                ", releaseDate='" + releaseDate + '\'' +
+                ", partner='" + partner + '\'' +
+                ", voucherNumber='" + voucherNumber + '\'' +
+                ", amount='" + amount + '\'' +
+                ", paymentType='" + paymentType + '\'' +
+                ", notes='" + notes + '\'' +
+                ", paymant='" + paymant + '\'' +
+                '}';
     }
 }

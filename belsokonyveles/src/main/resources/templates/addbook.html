@@ -13,24 +13,24 @@
                 <!-- From -->
                 <div class="col-sm-8 my-form offset-2">
                     <div>
-                        <form class="my-form" method="post" th:action="@{/post}" th:object="${bill}">
+                        <form class="my-form" method="post" th:action="@{/post}" th:object="${stringValues}">
                             <!-- Form Name -->
                             <legend>Számla hozzáadása</legend>
                             <!-- Text input-->
                             <div class="form-group">
                                 <label class="col-4 control-label sr-only">Számla kelte</label>
                                 <div class="col-8 offset-2">
-                                    <input type="text" class="form-control" placeholder="Számla kelte" />
+                                    <input type="text" class="form-control" placeholder="Számla kelte" th:field="*{releaseDate}"/>
                                 </div>
 
                                 <label class="col-4 control-label sr-only">Fizetési határidő</label>
                                 <div class="col-8 offset-2 pt-2">
-                                    <input type="text" class="form-control" placeholder="Fizetési határidő" />
+                                    <input type="text" class="form-control" placeholder="Fizetési határidő" th:field="*{deadline}"/>
                                 </div>
 
                                 <label class="col-8 control-label sr-only">Partner</label>
                                 <div class="col-8 offset-2 pt-2">
-                                    <input type="text" class="form-control" placeholder="Partner" />
+                                    <input type="text" class="form-control" placeholder="Partner" th:field="*{partner}"/>
                                 </div>
 
                                 <div class="form-raw">
@@ -47,17 +47,17 @@
 
                                 <label class="col-4 control-label sr-only ">Fizetés jellege</label>
                                 <div class="col-8 offset-2 pt-2">
-                                    <input type="text" class="form-control" placeholder="Fizetés jellege" />
+                                    <input type="text" class="form-control" placeholder="Fizetés jellege" th:field="*{paymant}"/>
                                 </div>
 
                                 <label class="col-4 control-label sr-only ">Kiadás jellege</label>
                                 <div class="col-8 offset-2 pt-2">
-                                    <input type="text" class="form-control" placeholder="Kiadás jellege" />
+                                    <input type="text" class="form-control" placeholder="Kiadás jellege" th:field="*{paymentType}"/>
                                 </div>
 
                                 <label class="col-4 control-label sr-only ">Megjegyzés</label>
                                 <div class="col-8 offset-2 pt-2">
-                                    <input type="text" class="form-control" placeholder="Megjegyzés"/>
+                                    <input type="text" class="form-control" placeholder="Megjegyzés" th:field="*{notes}"/>
                                 </div>
 
                                 <div class="pt-2">

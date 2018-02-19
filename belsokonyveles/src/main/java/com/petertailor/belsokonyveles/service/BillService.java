@@ -1,9 +1,6 @@
 package com.petertailor.belsokonyveles.service;
 
-import com.petertailor.belsokonyveles.domain.Bill;
-import com.petertailor.belsokonyveles.domain.Partner;
-import com.petertailor.belsokonyveles.domain.Paymant;
-import com.petertailor.belsokonyveles.domain.PaymentType;
+import com.petertailor.belsokonyveles.domain.*;
 import com.petertailor.belsokonyveles.repository.BillRepo;
 import com.petertailor.belsokonyveles.repository.PartnerRepo;
 import com.petertailor.belsokonyveles.repository.PaymentTypeRepo;
@@ -61,9 +58,7 @@ public class BillService {
     }
 
     private Bill addPaymentType(Bill b, String paymentTypeName) {
-        if (paymentTypeName.length() < 1) {
-            throw new IllegalArgumentException("The Payment name must be greater than 1 caracter : " + paymentTypeName);
-        }
+
         Bill c = b;
 
         paymentTypeName = paymentTypeName.trim();
@@ -79,18 +74,40 @@ public class BillService {
         return c;
     }
 
-    public Bill saveBill(Bill b) {
-        Bill c = b;
+//    public Bill saveBill(Bill b) {
+//        Bill c = b;
+//        //working properly
+//        addPaymentType(c,"PULT"); // if exist find that, if not create one, if name "" throw Exception THE PAYMENT IS UPPERCASE
+//        System.out.println(paymentTypeRepo.count());
+//        addPartner(c, "teleKom "); // if exist find that, if not create one, if name "" throw Exception IT IS UPPERCASE AND TRIMMED
+//        c.setDeadline("2018-12-12"); // ok
+//        c.setLastModify(new Date()); // ok
+//        //c.setNotes("nothing"); // null is allowanced
+//        c.setPaymant("kp"); // ok for u U kp KP utalás UTALÁS kézpénz KÉZPÉNZ
+//        c.setReleaseDate("2019-01-01"); // ok
+//        //c.setUser("Gabi");
+//        return billRepo.save(c);
+//    }
+
+    public Bill saveBill(StringValues b) {
+//        StringValues test = new StringValues("1990-03-03","1990-03-03","Telekom","OKHU986","789","pult","","u");
+        Bill c = new Bill();
+
         //working properly
-        addPaymentType(c,"PULT"); // if exist find that, if not create one, if name "" throw Exception THE PAYMENT IS UPPERCASE
-        System.out.println(paymentTypeRepo.count());
-        addPartner(c, "teleKom "); // if exist find that, if not create one, if name "" throw Exception IT IS UPPERCASE AND TRIMMED
-        c.setDeadline("2018-12-12"); // ok
+        addPaymentType(c,b.getPaymentType()); // if exist find that, if not create one, if name "" throw Exception THE PAYMENT IS UPPERCASE
+        addPartner(c,b.getPartner()); // if exist find that, if not create one, if name "" throw Exception IT IS UPPERCASE AND TRIMMED
+        c.setDeadline(b.getDeadline()); // ok
+        c.setNotes(b.getNotes()); // null is allowanced
+        c.setAmount(Long.parseLong(b.getAmount()));
+        c.setVoucherNumber(b.getVoucherNumber());
+        c.setPaymant(b.getPaymant()); // ok for u U kp KP utalás UTALÁS kézpénz KÉZPÉNZ
+        c.setReleaseDate(b.getReleaseDate()); // ok
+
+
+        // hidden values
         c.setLastModify(new Date()); // ok
-        //c.setNotes("nothing"); // null is allowanced
-        c.setPaymant("kp"); // ok for u U kp KP utalás UTALÁS kézpénz KÉZPÉNZ
-        c.setReleaseDate("2019-01-01"); // ok
-        //c.setUser("Gabi");
+        c.setUser("Gabi");
+
         return billRepo.save(c);
     }
 
