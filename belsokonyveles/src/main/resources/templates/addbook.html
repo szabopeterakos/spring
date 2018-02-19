@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" layout:decorator="/layouts/alfa" xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymleaf.org">
+<head>
+</head>
+<body>
+
+<div layout:fragment="content">
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <p class="pt-2"></p>
+                <!-- From -->
+                <div class="col-sm-8 my-form offset-2">
+                    <div>
+                        <form class="my-form" method="post" th:action="@{/post}" th:object="${bill}">
+                            <!-- Form Name -->
+                            <legend>Számla hozzáadása</legend>
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <label class="col-4 control-label sr-only">Számla kelte</label>
+                                <div class="col-8 offset-2">
+                                    <input type="text" class="form-control" placeholder="Számla kelte" />
+                                </div>
+
+                                <label class="col-4 control-label sr-only">Fizetési határidő</label>
+                                <div class="col-8 offset-2 pt-2">
+                                    <input type="text" class="form-control" placeholder="Fizetési határidő" />
+                                </div>
+
+                                <label class="col-8 control-label sr-only">Partner</label>
+                                <div class="col-8 offset-2 pt-2">
+                                    <input type="text" class="form-control" placeholder="Partner" />
+                                </div>
+
+                                <div class="form-raw">
+                                    <label class="col-2 control-label sr-only">Bizonylatszám</label>
+                                    <div class="col-8 offset-2 pt-2">
+                                        <input type="text" class="form-control" placeholder="Bizonylatszám" th:field="*{voucherNumber}"/>
+                                    </div>
+
+                                    <label class="col-2 control-label sr-only">Összeg</label>
+                                    <div class="col-8 offset-2 pt-2">
+                                        <input type="text" class="form-control" placeholder="Összeg" th:field="*{amount}"/>
+                                    </div>
+                                </div>
+
+                                <label class="col-4 control-label sr-only ">Fizetés jellege</label>
+                                <div class="col-8 offset-2 pt-2">
+                                    <input type="text" class="form-control" placeholder="Fizetés jellege" />
+                                </div>
+
+                                <label class="col-4 control-label sr-only ">Kiadás jellege</label>
+                                <div class="col-8 offset-2 pt-2">
+                                    <input type="text" class="form-control" placeholder="Kiadás jellege" />
+                                </div>
+
+                                <label class="col-4 control-label sr-only ">Megjegyzés</label>
+                                <div class="col-8 offset-2 pt-2">
+                                    <input type="text" class="form-control" placeholder="Megjegyzés"/>
+                                </div>
+
+                                <div class="pt-2">
+                                    <button type="reset" class="btn btn-outline-secondary col-md-2">Törlés</button>
+                                    <button type="submit" class="btn btn-outline-primary col-md-2">Beküldés</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Table -->
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Fizetési határidő</th>
+                        <th>Számla kelte</th>
+                        <th>Partner</th>
+                        <th>Bizonylatszám</th>
+                        <th>Összeg</th>
+                        <th>Fizetés jellege</th>
+                        <th>Megjegyzés</th>
+                        <th>Kiadás jellege</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="bill : ${bills}">
+                        <td th:text="${bill.deadline}">12</td>
+                        <td th:text="${bill.releaseDate}">2018-09-22</td>
+                        <td th:text="${bill.partner.name}">Telekom</td>
+                        <td th:text="${bill.voucherNumber}">7766Khii-0888</td>
+                        <td th:text="${bill.amount}">340 000 Ft</td>
+                        <td th:text="${bill.paymentType.typeName}">Banki átutalás</td>
+                        <td th:text="${bill.notes}"></td>
+                        <td th:text="${bill.paymant.name}">Közüzemi díj</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <!-- Sum Table -->
+                <table class="table table-striped">
+
+                    <label></label>
+                    <tbody>
+                    <tr>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

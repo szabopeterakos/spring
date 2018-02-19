@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="hu" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" xmlns:layout="http://www.w3.org/1999/xhtml">
+
+<head>
+
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+
+    <title>BookShelf - kifizetés kezelés</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap.css" th:href="@{/css/bootstrap.css}"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/styles.css" th:href="@{/css/styles.css}" />
+
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container" layout:fragment="alfa">
+        <a class="navbar-brand" href="/login">BookShelf - kifizetés kezelés</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/add">Hozzáadás</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/query">Keresés</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="printThis()">Nyomtatás</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="button-a">Exportálás</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<script>
+    function printThis()
+    {
+        let divToPrint=document.getElementById("printTable");
+        stuff= window.open("");
+        stuff.document.write(divToPrint.outerHTML);
+        stuff.print();
+        stuff.close();
+    }
+
+</script>
+
+
+<div layout:fragment="content">
+
+</div>
+
+<!-- Bootstrap core JavaScript -->
+<script src="../../static/jquery/jquery.min.js"></script>
+<script src="../../static/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

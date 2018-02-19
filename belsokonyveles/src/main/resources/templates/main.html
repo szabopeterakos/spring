@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="hu" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>HOZZAADAS</title>
+
+</head>
+<body>
+
+<div >
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">BookShelf - kifizetés kezelés</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="addbook.html">Hozzáadás</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Keresés</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Nyomtatás</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Exportálás</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <p class="pt-2"></p>
+                <!-- From -->
+                <div class="col-sm-8 my-form offset-2">
+                    <div>
+                        <form class="my-form">
+                            <!-- Form Name -->
+                            <legend>Számla hozzáadása</legend>
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <label class="col-4 control-label sr-only">Számla kelte</label>
+                                <div class="col-8 offset-2">
+                                    <input type="text" class="form-control" placeholder="Számla kelte"/>
+                                </div>
+
+                                <label class="col-4 control-label sr-only">Fizetési határidő</label>
+                                <div class="col-8 offset-2 pt-2">
+                                    <input type="text" class="form-control" placeholder="Fizetési határidő"/>
+                                </div>
+
+                                <label class="col-8 control-label sr-only">Partner</label>
+                                <div class="col-8 offset-2 pt-2">
+                                    <input type="text" class="form-control" placeholder="Partner"/>
+                                </div>
+
+                                <div class="form-raw">
+                                    <label class="col-2 control-label sr-only">Bizonylatszám</label>
+                                    <div class="col-8 offset-2 pt-2">
+                                        <input type="text" class="form-control" placeholder="Bizonylatszám"/>
+                                    </div>
+
+                                    <label class="col-2 control-label sr-only">Összeg</label>
+                                    <div class="col-8 offset-2 pt-2">
+                                        <input type="text" class="form-control" placeholder="Összeg"/>
+                                    </div>
+                                </div>
+
+                                <label class="col-4 control-label sr-only ">Fizetés jellege</label>
+                                <div class="col-8 offset-2 pt-2">
+                                    <input type="text" class="form-control" placeholder="Fizetés jellege"/>
+                                </div>
+
+                                <label class="col-4 control-label sr-only ">Fizetés jellege</label>
+                                <div class="col-8 offset-2 pt-2">
+                                    <input type="text" class="form-control" placeholder="Kiadás jellege"/>
+                                </div>
+
+                                <label class="col-4 control-label sr-only ">Fizetés jellege</label>
+                                <div class="col-8 offset-2 pt-2">
+                                    <input type="text" class="form-control" placeholder="Megjegyzés"/>
+                                </div>
+
+                                <div class="pt-2">
+                                    <button type="reset" class="btn btn-outline-secondary col-md-2">Törlés</button>
+                                    <button type="submit" class="btn btn-outline-primary col-md-2">Beküldés</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Table -->
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Fizetési határidő</th>
+                        <th>Számla kelte</th>
+                        <th>Partner</th>
+                        <th>Bizonylatszám</th>
+                        <th>Összeg</th>
+                        <th>Fizetés jellege</th>
+                        <th>Megjegyzés</th>
+                        <th>Kiadás jellege</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>2018-12-12</td>
+                        <td>2018-09-22</td>
+                        <td>Telekom</td>
+                        <td>7766Khii-0888</td>
+                        <td>340 000 Ft</td>
+                        <td>Banki átutalás</td>
+                        <td></td>
+                        <td>Közüzemi díj</td>
+                    </tr>
+                    <tr>
+                        <td>2018-12-12</td>
+                        <td>2018-09-22</td>
+                        <td>Elmű</td>
+                        <td>0888</td>
+                        <td>200 000 Ft</td>
+                        <td>Banki átutalás</td>
+                        <td></td>
+                        <td>Közüzemi díj</td>
+                    </tr>
+                    <tr>
+                        <td>2018-12-12</td>
+                        <td>2018-09- 22</td>
+                        <td>Coca-Cola</td>
+                        <td>123333</td>
+                        <td>53 020 Ft</td>
+                        <td>Készpénz fizetés</td>
+                        <td>pepsi helyett</td>
+                        <td>Pult</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <!-- Sum Table -->
+                <table class="table table-striped">
+
+                    <label>Összesen</label>
+                    <tbody>
+                    <tr>
+                        <td>13 000 000 Ft</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
