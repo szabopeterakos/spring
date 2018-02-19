@@ -1,6 +1,7 @@
 package com.petertailor.belsokonyveles.controller;
 
 import com.petertailor.belsokonyveles.domain.Bill;
+import com.petertailor.belsokonyveles.domain.QueryString;
 import com.petertailor.belsokonyveles.domain.StringValues;
 import com.petertailor.belsokonyveles.service.BillService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,21 +29,6 @@ public class IndexController {
         return "addbook";
     }
 
-    @RequestMapping("/login")
-    public String login(){
-        return "login";
-    }
-
-    @RequestMapping("/query")
-    public String query(){
-        return "querybook";
-    }
-
-    @RequestMapping("/")
-    public String main(){
-        return "login";
-    }
-
     @PostMapping("/post")
     public String getPostRequest(@ModelAttribute StringValues stringValues,Model m){ // model visszafelé is szállit
         billService.saveBill(stringValues);
@@ -52,6 +38,34 @@ public class IndexController {
         // add empty pojo
         m.addAttribute("bill",new Bill());
         return "addbook";
+    }
+
+    @RequestMapping("/login")
+    public String login(){
+        return "login";
+    }
+
+    @RequestMapping("/query")
+    public String query(Model m){
+        m.addAttribute("queryString",new QueryString());
+
+        //TEST
+        m.addAttribute("queriedBills",billService.findAllBill());
+
+        return "querybook";
+    }
+
+    @PostMapping("/sentQuery")
+    public String queryAnswer(@ModelAttribute QueryString qs, Model m){
+        System.out.println(qs);
+        //billService.selectQuery(qs);
+        m.addAttribute("queriedBills",billService.querySelector(qs));
+        return "querybook";
+    }
+
+    @RequestMapping("/")
+    public String main(){
+        return "login";
     }
 
 }

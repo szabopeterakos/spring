@@ -7,6 +7,9 @@ import com.petertailor.belsokonyveles.repository.PaymentTypeRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 
 @Service
@@ -74,35 +77,17 @@ public class BillService {
         return c;
     }
 
-//    public Bill saveBill(Bill b) {
-//        Bill c = b;
-//        //working properly
-//        addPaymentType(c,"PULT"); // if exist find that, if not create one, if name "" throw Exception THE PAYMENT IS UPPERCASE
-//        System.out.println(paymentTypeRepo.count());
-//        addPartner(c, "teleKom "); // if exist find that, if not create one, if name "" throw Exception IT IS UPPERCASE AND TRIMMED
-//        c.setDeadline("2018-12-12"); // ok
-//        c.setLastModify(new Date()); // ok
-//        //c.setNotes("nothing"); // null is allowanced
-//        c.setPaymant("kp"); // ok for u U kp KP utalás UTALÁS kézpénz KÉZPÉNZ
-//        c.setReleaseDate("2019-01-01"); // ok
-//        //c.setUser("Gabi");
-//        return billRepo.save(c);
-//    }
-
     public Bill saveBill(StringValues b) {
-//        StringValues test = new StringValues("1990-03-03","1990-03-03","Telekom","OKHU986","789","pult","","u");
         Bill c = new Bill();
 
-        //working properly
-        addPaymentType(c,b.getPaymentType()); // if exist find that, if not create one, if name "" throw Exception THE PAYMENT IS UPPERCASE
-        addPartner(c,b.getPartner()); // if exist find that, if not create one, if name "" throw Exception IT IS UPPERCASE AND TRIMMED
+        addPaymentType(c, b.getPaymentType()); // if exist find that, if not create one, if name "" throw Exception THE PAYMENT IS UPPERCASE
+        addPartner(c, b.getPartner()); // if exist find that, if not create one, if name "" throw Exception IT IS UPPERCASE AND TRIMMED
         c.setDeadline(b.getDeadline()); // ok
         c.setNotes(b.getNotes()); // null is allowanced
         c.setAmount(Long.parseLong(b.getAmount()));
         c.setVoucherNumber(b.getVoucherNumber());
         c.setPaymant(b.getPaymant()); // ok for u U kp KP utalás UTALÁS kézpénz KÉZPÉNZ
         c.setReleaseDate(b.getReleaseDate()); // ok
-
 
         // hidden values
         c.setLastModify(new Date()); // ok
@@ -111,5 +96,23 @@ public class BillService {
         return billRepo.save(c);
     }
 
+    public Iterable<Bill> querySelector(QueryString qs) {
+        if (qs.getTypeQuery().length() == 0 && qs.getParterQuery().length() == 0 && qs.getDateQuery().length() == 0) {
+            //no query silt everithing
+            return billRepo.findAll();
+        } else if (qs.getTypeQuery().length() != 0 && qs.getParterQuery().length() == 0 && qs.getDateQuery().length() == 0) {
+            // just type query
+            return billRepo.findAllByPaymentTypeTypeName(qs.getTypeQuery().toUpperCase());
+        } else if (qs.getTypeQuery().length() == 0 && qs.getParterQuery().length() != 0 && qs.getDateQuery().length() == 0) {
+            //just partner query
+            return billRepo.findAllByPartnerName(qs.getParterQuery().toUpperCase());
+        } else if (qs.getTypeQuery().length() == 0 && qs.getParterQuery().length() == 0 && qs.getDateQuery().length() != 0) {
+            //just date query
+            Date[] dates = DateIntervalValidator.intervallCreator(qs.getDateQuery());
+            return billRepo.findAllByReleaseDateBetween(dates[0], dates[1]);
+        } else {
+            return null;
+        }
+    }
 
 }

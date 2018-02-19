@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="hu" xmlns:layout="http://www.w3.org/1999/xhtml" layout:decorator="/layouts/alfa">
+<html lang="hu" xmlns:layout="http://www.w3.org/1999/xhtml" layout:decorator="/layouts/alfa"
+      xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8"/>
     <title>Title</title>
@@ -13,25 +14,25 @@
 
 <div layout:fragment="content">
 <div class="col-sm-8 offset-sm-2 text-center col-sx-12 offset-sx-0">
-    <form>
+    <form method="post" th:action="@{/sentQuery}" th:object="${queryString}">
         <div class="col-sx-4 offset-sx-4 col-sm-6 offset-sm-3 col-md-4 offset-md-4 pt-5">
 
             <label class="control-label">Jelleg kiválasztás</label>
-            <select id="editable-select1" class="form-control es-input">
-                <option>Közüzemi díj</option>
-                <option>Pult</option>
-                <option>Marketing</option>
+            <select id="editable-select1" class="form-control es-input" th:field="*{typeQuery}">
+                <option value="Közüzemi díj">Közüzemi díj</option>
+                <option value="Pult">Pult</option>
+                <option value="Marketing">Marketing</option>
             </select>
 
             <label class="control-label m-2">Partner kiválasztása</label>
-            <select id="editable-select2" class="form-control es-input">
-                <option>Coca-Cola</option>
-                <option>Telekom</option>
-                <option>VETUSZ Kft.</option>
+            <select id="editable-select2" class="form-control es-input" th:field="*{parterQuery}">
+                <option value="Coca-Cola">Coca-Cola</option>
+                <option value="Telekom">Telekom</option>
+                <option value="VETUSZ Kft.">VETUSZ Kft.</option>
             </select>
 
             <label class="control-label m-2">A szűrés intervalluma</label>
-            <input type="text" class="form-control text-center" placeholder="2018.02.01-2018.04.01"/>
+            <input type="text" class="form-control text-center" placeholder="2018.02.01-2018.04.01" th:field="*{dateQuery}"/>
 
         </div>
         <button type="submit" class="btn btn-outline-primary col-md-2 mt-4">Beküldés</button>
@@ -56,35 +57,15 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td>2018-12-12</td>
-            <td>2018-09-22</td>
-            <td>Telekom</td>
-            <td>7766Khii-0888</td>
-            <td>340 000 Ft</td>
-            <td>Banki átutalás</td>
-            <td></td>
-            <td>Közüzemi díj</td>
-        </tr>
-        <tr>
-            <td>2018-12-12</td>
-            <td>2018-09-22</td>
-            <td>Elmű</td>
-            <td>0888</td>
-            <td>200 000 Ft</td>
-            <td>Banki átutalás</td>
-            <td></td>
-            <td>Közüzemi díj</td>
-        </tr>
-        <tr>
-            <td>2018-12-12</td>
-            <td>2018-09- 22</td>
-            <td>Coca-Cola</td>
-            <td>123333</td>
-            <td>53 020 Ft</td>
-            <td>Készpénz fizetés</td>
-            <td>pepsi helyett</td>
-            <td>Pult</td>
+        <tr th:each="bill : ${queriedBills}">
+            <td th:text="${bill.deadline}">12</td>
+            <td th:text="${bill.releaseDate}">2018-09-22</td>
+            <td th:text="${bill.partner.name}">Telekom</td>
+            <td th:text="${bill.voucherNumber}">7766Khii-0888</td>
+            <td th:text="${bill.amount}">340 000 Ft</td>
+            <td th:text="${bill.paymentType.typeName}">Banki átutalás</td>
+            <td th:text="${bill.notes}"></td>
+            <td th:text="${bill.paymant.name}">Közüzemi díj</td>
         </tr>
         </tbody>
     </table>
