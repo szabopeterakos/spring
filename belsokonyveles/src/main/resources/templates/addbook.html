@@ -11,26 +11,24 @@
 
 <div layout:fragment="content">
     <!-- Page Content -->
-    <div class="container">
-        <div class="row">
+
+        <div class="row pt-4">
             <div class="col-lg-12 text-center">
                 <p class="pt-2"></p>
                 <!-- From -->
-                <div class="col-sm-8 my-form offset-2">
+                <div class="col-md-4 offset-md-4 text-center col-sx-12 offset-sx-0">
                     <div>
                         <form class="my-form" method="post" th:action="@{/post}" th:object="${stringValues}">
-                            <!-- Form Name -->
-                            <legend>Számla hozzáadása</legend>
                             <!-- Text input-->
                             <div class="form-group">
-                                <label class="col-4 control-label sr-only">Számla kelte</label>
-                                <div class="col-8 offset-2">
-                                    <input type="text" class="form-control" placeholder="Számla kelte" th:field="*{releaseDate}"/>
+                                <label class="control-label sr-only">Számla kelte</label>
+                                <div class="">
+                                    <input type="text" class="form-control mt-2 mb-2" placeholder="Számla kelte" th:field="*{releaseDate}" required="true"/>
                                 </div>
 
-                                <label class="col-4 control-label sr-only">Fizetési határidő</label>
-                                <div class="col-8 offset-2 pt-2">
-                                    <input type="text" class="form-control" placeholder="Fizetési határidő" th:field="*{deadline}"/>
+                                <label class=" control-label sr-only">Fizetési határidő</label>
+                                <div class="">
+                                    <input type="text" class="form-control mt-2 mb-2" placeholder="Fizetési határidő" th:field="*{deadline}" required="true"/>
                                 </div>
 
                                 <!--<label class="col-8 control-label sr-only">Partner</label>-->
@@ -38,22 +36,22 @@
                                     <!--<input type="text" class="form-control" placeholder="Partner" th:field="*{partner}"/>-->
                                 <!--</div>-->
 
-                                <label class="col-8 control-label">Partner Selector</label>
-                                <select id="editable-select3" class="form-control es-input" th:field="*{partner}">
+                                <label class="control-label">Partner</label>
+                                <select id="editable-select3" class="form-control es-input" th:field="*{partner}" required="true">
                                     <div th:each="partner : ${partners}">
                                         <option value="" th:value="${partner.name}" th:text="${partner.name}">Coca-Cola</option>
                                     </div>
                                 </select>
 
                                 <div class="form-raw">
-                                    <label class="col-2 control-label sr-only">Bizonylatszám</label>
-                                    <div class="col-8 offset-2 pt-2">
-                                        <input type="text" class="form-control" placeholder="Bizonylatszám" th:field="*{voucherNumber}"/>
+                                    <label class="control-label sr-only">Bizonylatszám</label>
+                                    <div class="">
+                                        <input type="text" class="form-control mt-2 mb-2" placeholder="Bizonylatszám" th:field="*{voucherNumber}"/>
                                     </div>
 
-                                    <label class="col-2 control-label sr-only">Összeg</label>
-                                    <div class="col-8 offset-2 pt-2">
-                                        <input type="text" class="form-control" placeholder="Összeg" th:field="*{amount}"/>
+                                    <label class=" control-label sr-only">Összeg</label>
+                                    <div class="">
+                                        <input type="text" class="form-control mt-2 mb-2" placeholder="Összeg" th:field="*{amount}" required="true"/>
                                     </div>
                                 </div>
 
@@ -63,7 +61,7 @@
                                 <!--</div>-->
 
                                 <label class="control-label">Fizetés módja</label>
-                                <select class="form-control es-input col-8 offset-2 pt-2" th:field="*{paymant}">
+                                <select class="form-control es-input" th:field="*{paymant}" required="true">
                                         <option value="KP">KÉSZPÉNZ</option>
                                         <option value="U">UTALÁS</option>
                                 </select>
@@ -73,22 +71,22 @@
                                     <!--<input type="text" class="form-control" placeholder="Kiadás jellege" th:field="*{paymentType}"/>-->
                                 <!--</div>-->
 
-                                <label class="control-label">Jelleg kiválasztás</label>
-                                <select id="editable-select4" class="form-control es-input" th:field="*{paymentType}">
+                                <label class="control-label mt-2">Kifizetés Jellegének kiválasztás</label>
+                                <select id="editable-select4" class="form-control es-input" th:field="*{paymentType}" required="true">
                                     <div th:each="type : ${types}">
                                         <option th:text="${type.typeName}">Közüzemi díj</option>
                                     </div>
                                 </select>
 
 
-                                <label class="col-4 control-label sr-only ">Megjegyzés</label>
-                                <div class="col-8 offset-2 pt-2">
-                                    <input type="text" class="form-control" placeholder="Megjegyzés" th:field="*{notes}"/>
+                                <label class="control-label sr-only ">Megjegyzés</label>
+                                <div class="">
+                                    <input type="text" class="form-control mt-2 mb-2" placeholder="Megjegyzés" th:field="*{notes}"/>
                                 </div>
 
-                                <div class="pt-2">
-                                    <button type="reset" class="btn btn-outline-secondary col-md-2">Törlés</button>
-                                    <button type="submit" class="btn btn-outline-primary col-md-2">Beküldés</button>
+                                <div class="">
+                                    <button type="reset" class="btn btn-outline-secondary col-xl-3 col-lg-4 col-md-5 col-sm-4 col-sx-6">Törlés</button>
+                                    <button type="submit" class="btn btn-outline-primary col-xl-3 col-lg-4 col-md-5 col-sm-4 col-sx-6">Beküldés</button>
                                 </div>
                             </div>
                         </form>
@@ -127,19 +125,9 @@
                     </tbody>
                 </table>
 
-                <!-- Sum Table -->
-                <table class="table table-striped">
-
-                    <label></label>
-                    <tbody>
-                    <tr>
-                        <td></td>
-                    </tr>
-                    </tbody>
-                </table>
             </div>
         </div>
-    </div>
+
 </div>
 
 </body>
