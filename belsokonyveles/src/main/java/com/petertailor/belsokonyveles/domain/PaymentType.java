@@ -15,7 +15,6 @@ public class PaymentType {
 
     private String typeName;
 
-
     @OneToMany(mappedBy = "paymentType")
     private List<Bill> bills;
 

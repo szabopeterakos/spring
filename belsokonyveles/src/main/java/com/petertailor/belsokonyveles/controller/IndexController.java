@@ -5,6 +5,8 @@ import com.petertailor.belsokonyveles.domain.QueryString;
 import com.petertailor.belsokonyveles.domain.StringValues;
 import com.petertailor.belsokonyveles.service.BillService;
 import com.petertailor.belsokonyveles.service.ConvertToExcel;
+import com.petertailor.belsokonyveles.service.PartnerService;
+import com.petertailor.belsokonyveles.service.PaymentTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,16 +29,32 @@ public class IndexController {
 
 
     private BillService billService;
+    private PaymentTypeService paymentTypeService;
+    private PartnerService partnerService;
+
     private ConvertToExcel convertToExcel;
     private Iterable<Bill> currentBillList;
 
     @Autowired
-    public void setConvertToExcel(ConvertToExcel convertToExcel) { this.convertToExcel = convertToExcel; }
+    public void setPartnerService(PartnerService partnerService) {
+        this.partnerService = partnerService;
+    }
+
+    @Autowired
+    public void setPaymentTypeService(PaymentTypeService paymentTypeService) {
+        this.paymentTypeService = paymentTypeService;
+    }
+
+    @Autowired
+    public void setConvertToExcel(ConvertToExcel convertToExcel) {
+        this.convertToExcel = convertToExcel;
+    }
 
     @Autowired
     public void setBillService(BillService billService) {
         this.billService = billService;
     }
+
 
     @RequestMapping("/add")
     public String add(Model m) {
@@ -64,10 +82,16 @@ public class IndexController {
 
     @RequestMapping("/query")
     public String query(Model m) {
+        // new object inject
         m.addAttribute("queryString", new QueryString());
 
-        //TEST
+        //start
         m.addAttribute("queriedBills", billService.findAllBill());
+        //start select.option
+        m.addAttribute("types", paymentTypeService.paymentNamesList());
+        m.addAttribute("partners",partnerService.partnerList());
+
+        // current query saving
         currentBillList = billService.findAllBill();
 
         return "querybook";
@@ -78,7 +102,12 @@ public class IndexController {
         //billService.selectQuery(qs);
         m.addAttribute("queriedBills", billService.querySelector(qs));
 
-        currentBillList = billService.querySelector(qs);;
+        //start select.option
+        m.addAttribute("types", paymentTypeService.paymentNamesList());
+        m.addAttribute("partners",partnerService.partnerList());
+
+        //current query save
+        currentBillList = billService.querySelector(qs);
 
         return "querybook";
     }
@@ -88,7 +117,7 @@ public class IndexController {
         convertToExcel.convertToExcel(currentBillList);
 
         response.setContentType("application/xlsx");
-        response.setHeader("Content-Disposition", "attachment; filename=" + new SimpleDateFormat("yyMMdd-hhmm-").format(new Date())+"bookShelf"+".xlsx");
+        response.setHeader("Content-Disposition", "attachment; filename=" + new SimpleDateFormat("yyMMdd-hhmm-").format(new Date()) + "bookShelf" + ".xlsx");
         InputStream inputStream = new FileInputStream(new File("src/main/resources/bookShelf.xlsx"));
         return outputStream -> {
             int nRead;

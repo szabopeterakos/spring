@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Title</title>
-    <link href="http://rawgithub.com/indrimuska/jquery-editable-select/master/dist/jquery-editable-select.min.css" rel="stylesheet"/>
+    <!--nice select app-->
+    <link href="http://rawgithub.com/indrimuska/jquery-editable-select/master/dist/jquery-editable-select.min.css"
+          rel="stylesheet"/>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://rawgithub.com/indrimuska/jquery-editable-select/master/dist/jquery-editable-select.min.js"></script>
 
@@ -13,82 +15,82 @@
 <body>
 
 <div layout:fragment="content">
-<div class="col-sm-8 offset-sm-2 text-center col-sx-12 offset-sx-0">
-    <form method="post" th:action="@{/sentQuery}" th:object="${queryString}">
-        <div class="col-sx-4 offset-sx-4 col-sm-6 offset-sm-3 col-md-4 offset-md-4 pt-5">
+    <div class="col-sm-8 offset-sm-2 text-center col-sx-12 offset-sx-0">
+        <form method="post" th:action="@{/sentQuery}" th:object="${queryString}">
+            <div class="col-sx-4 offset-sx-4 col-sm-6 offset-sm-3 col-md-4 offset-md-4 pt-5">
 
-            <label class="control-label">Jelleg kiválasztás</label>
-            <select id="editable-select1" class="form-control es-input" th:field="*{typeQuery}">
-                <option value="Közüzemi díj">Közüzemi díj</option>
-                <option value="Pult">Pult</option>
-                <option value="Marketing">Marketing</option>
-            </select>
+                <label class="control-label">Jelleg kiválasztás</label>
+                <select id="editable-select1" class="form-control es-input" th:field="*{typeQuery}">
+                    <div th:each="type : ${types}">
+                        <option th:text="${type.typeName}">Közüzemi díj</option>
+                    </div>
+                </select>
 
-            <label class="control-label m-2">Partner kiválasztása</label>
-            <select id="editable-select2" class="form-control es-input" th:field="*{parterQuery}">
-                <option value="Coca-Cola">Coca-Cola</option>
-                <option value="Telekom">Telekom</option>
-                <option value="VETUSZ Kft.">VETUSZ Kft.</option>
-            </select>
+                <label class="control-label m-2">Partner kiválasztása</label>
+                <select id="editable-select2" class="form-control es-input" th:field="*{parterQuery}">
+                    <div th:each="partner : ${partners}">
+                        <option value="" th:value="${partner.name}" th:text="${partner.name}">Coca-Cola</option>
+                    </div>
+                </select>
 
-            <label class="control-label m-2">A szűrés intervalluma</label>
-            <input type="text" class="form-control text-center" placeholder="2018.02.01-2018.04.01" th:field="*{dateQuery}"/>
+                <label class="control-label m-2">A szűrés intervalluma</label>
+                <input type="text" class="form-control text-center" placeholder="2018.02.01-2018.04.01"
+                       th:field="*{dateQuery}"/>
 
-        </div>
-        <button type="submit" class="btn btn-outline-primary col-md-2 mt-4">Beküldés</button>
-    </form>
-</div>
-
+            </div>
+            <button type="submit" class="btn btn-outline-primary col-md-2 mt-4">Beküldés</button>
+        </form>
+    </div>
 
 
     <!-- Table -->
     <div class="m-2 table table-striped mt-4 text-center">
-    <table class="table table-striped mt-4 text-center" id="printTable">
-        <thead>
-        <tr>
-            <th>Fizetési határidő</th>
-            <th>Számla kelte</th>
-            <th>Partner</th>
-            <th>Bizonylatszám</th>
-            <th>Összeg</th>
-            <th>Fizetés jellege</th>
-            <th>Megjegyzés</th>
-            <th>Kiadás jellege</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="bill : ${queriedBills}">
-            <td th:text="${bill.deadline}">12</td>
-            <td th:text="${bill.releaseDate}">2018-09-22</td>
-            <td th:text="${bill.partner.name}">Telekom</td>
-            <td th:text="${bill.voucherNumber}">7766Khii-0888</td>
-            <td th:text="${bill.amount}">340 000 Ft</td>
-            <td th:text="${bill.paymentType.typeName}">Banki átutalás</td>
-            <td th:text="${bill.notes}"></td>
-            <td th:text="${bill.paymant.name}">Közüzemi díj</td>
-        </tr>
-        </tbody>
-    </table>
+        <table class="table table-striped mt-4 text-center" id="printTable">
+            <thead>
+            <tr>
+                <th>Fizetési határidő</th>
+                <th>Számla kelte</th>
+                <th>Partner</th>
+                <th>Bizonylatszám</th>
+                <th>Összeg</th>
+                <th>Fizetés jellege</th>
+                <th>Megjegyzés</th>
+                <th>Kiadás jellege</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="bill : ${queriedBills}">
+                <td th:text="${bill.deadline}">12</td>
+                <td th:text="${bill.releaseDate}">2018-09-22</td>
+                <td th:text="${bill.partner.name}">Telekom</td>
+                <td th:text="${bill.voucherNumber}">7766Khii-0888</td>
+                <td th:text="${bill.amount}">340 000 Ft</td>
+                <td th:text="${bill.paymentType.typeName}">Banki átutalás</td>
+                <td th:text="${bill.notes}"></td>
+                <td th:text="${bill.paymant.name}">Közüzemi díj</td>
+            </tr>
+            </tbody>
+        </table>
 
-    <!-- Sum Table -->
-    <table class="table table-striped mt-2 text-center">
+        <!-- Sum Table -->
+        <table class="table table-striped mt-2 text-center">
 
-        <label class="font-weight-bold">Összesen</label>
-        <tbody>
-        <tr>
-            <td>13 000 000 Ft</td>
-        </tr>
-        </tbody>
-    </table>
+            <label class="font-weight-bold">Összesen</label>
+            <tbody>
+            <tr>
+                <td>13 000 000 Ft</td>
+            </tr>
+            </tbody>
+        </table>
 
     </div>
-
+    <!--nice select app-->
     <script>
-        $('#editable-select1').editableSelect({ effects: 'fade' });
-        $('#editable-select2').editableSelect({ effects: 'fade' });
+        $('#editable-select1').editableSelect({effects: 'fade'});
+        $('#editable-select2').editableSelect({effects: 'fade'});
     </script>
-
 </div>
+
 
 </body>
 </html>
