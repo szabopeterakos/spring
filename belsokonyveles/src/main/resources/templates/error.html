@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="hu" xmlns:layout="http://www.w3.org/1999/xhtml" layout:decorator="/layouts/alfa"
+      xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+
+</head>
+<body>
+
+<div layout:fragment="content" class="col-sm-8 offset-sm-2 my-login col-sx-12 offset-sx-0">
+    <h1 class="form-signin-heading text-muted">Valami hibát találtunk!</h1>
+    <pre th:text="${eError}"></pre>
+    <br/>
+    <hr/>
+    <pre th:text="${eMessage}"></pre>
+    <hr/>
+    <br/>
+    <h2>A böngésző vissza gombjával bármikor visszakerülhet az előző munkamenetedbe.</h2>
+    <br/>
+    <br/>
+    <pre th:text="${eTimeStamp}"></pre>
+    <!--<pre th:text="${ePath}"></pre>-->
+    <pre th:text="${eStatus}"></pre>
+
+</div>
+
+</body>
+</html>
