@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" layout:decorator="/layouts/alfa" xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymleaf.org">
 <head>
+    <!--nice select app-->
+    <link href="http://rawgithub.com/indrimuska/jquery-editable-select/master/dist/jquery-editable-select.min.css"
+          rel="stylesheet"/>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://rawgithub.com/indrimuska/jquery-editable-select/master/dist/jquery-editable-select.min.js"></script>
 </head>
 <body>
 
@@ -28,10 +33,17 @@
                                     <input type="text" class="form-control" placeholder="Fizetési határidő" th:field="*{deadline}"/>
                                 </div>
 
-                                <label class="col-8 control-label sr-only">Partner</label>
-                                <div class="col-8 offset-2 pt-2">
-                                    <input type="text" class="form-control" placeholder="Partner" th:field="*{partner}"/>
-                                </div>
+                                <!--<label class="col-8 control-label sr-only">Partner</label>-->
+                                <!--<div class="col-8 offset-2 pt-2">-->
+                                    <!--<input type="text" class="form-control" placeholder="Partner" th:field="*{partner}"/>-->
+                                <!--</div>-->
+
+                                <label class="col-8 control-label">Partner Selector</label>
+                                <select id="editable-select3" class="form-control es-input" th:field="*{partner}">
+                                    <div th:each="partner : ${partners}">
+                                        <option value="" th:value="${partner.name}" th:text="${partner.name}">Coca-Cola</option>
+                                    </div>
+                                </select>
 
                                 <div class="form-raw">
                                     <label class="col-2 control-label sr-only">Bizonylatszám</label>
@@ -45,15 +57,28 @@
                                     </div>
                                 </div>
 
-                                <label class="col-4 control-label sr-only ">Fizetés jellege</label>
-                                <div class="col-8 offset-2 pt-2">
-                                    <input type="text" class="form-control" placeholder="Fizetés jellege" th:field="*{paymant}"/>
-                                </div>
+                                <!--<label class="col-4 control-label sr-only ">Fizetés jellege</label>-->
+                                <!--<div class="col-8 offset-2 pt-2">-->
+                                    <!--<input type="text" class="form-control" placeholder="Fizetés jellege" th:field="*{paymant}"/>-->
+                                <!--</div>-->
 
-                                <label class="col-4 control-label sr-only ">Kiadás jellege</label>
-                                <div class="col-8 offset-2 pt-2">
-                                    <input type="text" class="form-control" placeholder="Kiadás jellege" th:field="*{paymentType}"/>
-                                </div>
+                                <label class="control-label">Fizetés módja</label>
+                                <select class="form-control es-input col-8 offset-2 pt-2" th:field="*{paymant}">
+                                        <option value="KP">KÉSZPÉNZ</option>
+                                        <option value="U">UTALÁS</option>
+                                </select>
+
+                                <!--<label class="col-4 control-label sr-only ">Kiadás jellege</label>-->
+                                <!--<div class="col-8 offset-2 pt-2">-->
+                                    <!--<input type="text" class="form-control" placeholder="Kiadás jellege" th:field="*{paymentType}"/>-->
+                                <!--</div>-->
+
+                                <label class="control-label">Jelleg kiválasztás</label>
+                                <select id="editable-select4" class="form-control es-input" th:field="*{paymentType}">
+                                    <div th:each="type : ${types}">
+                                        <option th:text="${type.typeName}">Közüzemi díj</option>
+                                    </div>
+                                </select>
 
                                 <label class="col-4 control-label sr-only ">Megjegyzés</label>
                                 <div class="col-8 offset-2 pt-2">
@@ -67,6 +92,10 @@
                             </div>
                         </form>
                     </div>
+                    <script>
+                        $('#editable-select3').editableSelect({effects: 'fade'});
+                        $('#editable-select4').editableSelect({effects: 'fade'});
+                    </script>
                 </div>
 
                 <!-- Table -->

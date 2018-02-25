@@ -30,6 +30,7 @@ public class StringValues {
     }
 
     public StringValues(String deadline, String releaseDate, String partner, String amount, String paymentType, String paymant) {
+
         this.deadline = deadline;
         this.releaseDate = releaseDate;
         this.partner = partner;

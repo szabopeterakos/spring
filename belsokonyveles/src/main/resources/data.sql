@@ -5,7 +5,7 @@ insert into PARTNER (name) values('FACEBOOK');
 
 insert into PAYMENT_TYPE (TYPE_NAME ) values ('KONYHA');
 insert into PAYMENT_TYPE (TYPE_NAME ) values ('PULT');
-insert into PAYMENT_TYPE (TYPE_NAME ) values ('VODAFONE');
+insert into PAYMENT_TYPE (TYPE_NAME ) values ('KÖZÜZEMI DÍJ');
 
 
 INSERT INTO BILL (AMOUNT ,DEADLINE ,LAST_MODIFY ,PAYMANT ,RELEASE_DATE ,USER ,VOUCHER_NUMBER ,PARTNER_ID ,PAYMENT_TYPE_ID ) values (1000,'2009-3-1','2009-2-22','1','2019-2-1','Petra','KK7654',2,2);

@@ -61,12 +61,22 @@ public class IndexController {
         m.addAttribute("bills", billService.findLast3Bill());
         // add empty pojo
         m.addAttribute("stringValues", new StringValues());
+
+        //start select.option
+        m.addAttribute("partners",partnerService.partnerList());
+        m.addAttribute("types", paymentTypeService.paymentNamesList());
+
+
         return "addbook";
     }
 
     @PostMapping("/post")
     public String getPostRequest(@ModelAttribute StringValues stringValues, Model m) { // model visszafelé is szállit
         billService.saveBill(stringValues);
+
+        //start select.option
+        m.addAttribute("partners",partnerService.partnerList());
+        m.addAttribute("types", paymentTypeService.paymentNamesList());
 
         //reset
         m.addAttribute("bills", billService.findLast3Bill());
@@ -102,12 +112,16 @@ public class IndexController {
         //billService.selectQuery(qs);
         m.addAttribute("queriedBills", billService.querySelector(qs));
 
+        //current query save
+        currentBillList = billService.querySelector(qs);
+
+        //current sum
+        Long currentSum = billService.sumBillsAmount(currentBillList);
+
         //start select.option
         m.addAttribute("types", paymentTypeService.paymentNamesList());
         m.addAttribute("partners",partnerService.partnerList());
-
-        //current query save
-        currentBillList = billService.querySelector(qs);
+        m.addAttribute("amountSum",currentSum+" Ft");
 
         return "querybook";
     }
