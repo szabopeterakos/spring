@@ -47,8 +47,4 @@ public class DateCreater {
          return c;
     }
 
-    public static void main(String[] args) {
-        System.out.println(DateCreater.dateParser("09 09 09"));
-    }
-
 }

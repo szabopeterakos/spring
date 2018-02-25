@@ -14,7 +14,7 @@
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap.css" th:href="@{/css/bootstrap.css}"/>
-    <link rel="stylesheet" href="../../static/bootstrap/css/styles.css" th:href="@{/css/styles.css}" />
+    <link rel="stylesheet" href="../../static/bootstrap/css/styles.css" th:href="@{/css/styles.css}"/>
 
 </head>
 
@@ -40,7 +40,7 @@
                     <a class="nav-link" href="#" onclick="printThis()">Nyomtatás</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" id="button-a">Exportálás</a>
+                    <a class="nav-link" href="/downloadFile" id="button-a" th:action="@{/downloadFile}"><form method="get">Exportálás</form></a>
                 </li>
             </ul>
         </div>
