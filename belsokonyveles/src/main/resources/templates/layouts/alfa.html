@@ -16,8 +16,6 @@
     <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap.css" th:href="@{/css/bootstrap.css}"/>
     <link rel="stylesheet" href="../../static/bootstrap/css/styles.css" th:href="@{/css/styles.css}"/>
 
-
-
 </head>
 
 <body>
@@ -38,11 +36,11 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/query">Keresés</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="printThis()">Nyomtatás</a>
+                <li class="nav-item" id="prnt-link">
+                    <a class="nav-link disabled" href="#" onclick="printThis()">Nyomtatás</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/downloadFile" id="button-a" th:action="@{/downloadFile}"><form method="get">Exportálás</form></a>
+                <li class="nav-item" id="exp-link">
+                    <a class="nav-link disabled" href="/downloadFile" id="button-a" th:action="@{/downloadFile}"><form method="get">Exportálás</form></a>
                 </li>
             </ul>
         </div>

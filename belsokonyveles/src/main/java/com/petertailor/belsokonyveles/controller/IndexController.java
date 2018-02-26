@@ -96,7 +96,7 @@ public class IndexController {
         m.addAttribute("queryString", new QueryString());
 
         //start
-        m.addAttribute("queriedBills", billService.findAllBill());
+        m.addAttribute("queriedBills", billService.findLast3Bill());
         //start select.option
         m.addAttribute("types", paymentTypeService.paymentNamesList());
         m.addAttribute("partners",partnerService.partnerList());

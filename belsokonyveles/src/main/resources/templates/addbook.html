@@ -18,7 +18,7 @@
                 <!-- From -->
                 <div class="col-md-4 offset-md-4 text-center col-sx-12 offset-sx-0">
                     <div>
-                        <form class="my-form" method="post" th:action="@{/post}" th:object="${stringValues}">
+                        <form id="myForm" class="my-form" method="post" th:action="@{/post}" th:object="${stringValues}">
                             <!-- Text input-->
                             <div class="form-group">
                                 <label class="control-label sr-only">Számla kelte</label>
@@ -30,11 +30,6 @@
                                 <div class="">
                                     <input type="text" class="form-control mt-2 mb-2" placeholder="Fizetési határidő" th:field="*{deadline}" required="true"/>
                                 </div>
-
-                                <!--<label class="col-8 control-label sr-only">Partner</label>-->
-                                <!--<div class="col-8 offset-2 pt-2">-->
-                                    <!--<input type="text" class="form-control" placeholder="Partner" th:field="*{partner}"/>-->
-                                <!--</div>-->
 
                                 <label class="control-label">Partner</label>
                                 <select id="editable-select3" class="form-control es-input" th:field="*{partner}" required="true">
@@ -55,21 +50,11 @@
                                     </div>
                                 </div>
 
-                                <!--<label class="col-4 control-label sr-only ">Fizetés jellege</label>-->
-                                <!--<div class="col-8 offset-2 pt-2">-->
-                                    <!--<input type="text" class="form-control" placeholder="Fizetés jellege" th:field="*{paymant}"/>-->
-                                <!--</div>-->
-
                                 <label class="control-label">Fizetés módja</label>
                                 <select class="form-control es-input" th:field="*{paymant}" required="true">
                                         <option value="KP">KÉSZPÉNZ</option>
                                         <option value="U">UTALÁS</option>
                                 </select>
-
-                                <!--<label class="col-4 control-label sr-only ">Kiadás jellege</label>-->
-                                <!--<div class="col-8 offset-2 pt-2">-->
-                                    <!--<input type="text" class="form-control" placeholder="Kiadás jellege" th:field="*{paymentType}"/>-->
-                                <!--</div>-->
 
                                 <label class="control-label mt-2">Kifizetés Jellegének kiválasztás</label>
                                 <select id="editable-select4" class="form-control es-input" th:field="*{paymentType}" required="true">
@@ -78,20 +63,26 @@
                                     </div>
                                 </select>
 
-
                                 <label class="control-label sr-only ">Megjegyzés</label>
-                                <div class="">
+                                <div>
                                     <input type="text" class="form-control mt-2 mb-2" placeholder="Megjegyzés" th:field="*{notes}"/>
                                 </div>
 
-                                <div class="">
-                                    <button type="reset" class="btn btn-outline-secondary col-xl-3 col-lg-4 col-md-5 col-sm-4 col-sx-6">Törlés</button>
-                                    <button type="submit" class="btn btn-outline-primary col-xl-3 col-lg-4 col-md-5 col-sm-4 col-sx-6">Beküldés</button>
+                                <div>
+                                    <button type="reset" href="/add" class="btn btn-outline-secondary col-xl-3 col-lg-4 col-md-5 col-sm-4 col-sx-6" onclick="resetForm()">Törlés</button>
+                                    <button type="submit" class="btn btn-outline-primary col-xl-3 col-lg-4 col-md-5 col-sm-4 col-sx-6" onclick="resetForm()">Beküldés</button>
+                                    <script>
+                                        //from reset
+                                        function resetForm() {
+                                            document.getElementById("myForm").reset();
+                                        }
+                                    </script>
                                 </div>
                             </div>
                         </form>
                     </div>
                     <script>
+                        // select option setting
                         $('#editable-select3').editableSelect({effects: 'fade'});
                         $('#editable-select4').editableSelect({effects: 'fade'});
                     </script>
@@ -101,6 +92,7 @@
                 <table class="table table-striped">
                     <thead>
                     <tr>
+                        <th>Sorszám</th>
                         <th>Fizetési határidő</th>
                         <th>Számla kelte</th>
                         <th>Partner</th>
@@ -113,6 +105,7 @@
                     </thead>
                     <tbody>
                     <tr th:each="bill : ${bills}">
+                        <td th:text="${bill.id}">12</td>
                         <td th:text="${bill.deadline}">12</td>
                         <td th:text="${bill.releaseDate}">2018-09-22</td>
                         <td th:text="${bill.partner.name}">Telekom</td>

@@ -39,7 +39,7 @@
                        th:field="*{dateQuery}"/>
 
             </div>
-            <button type="submit" class="btn btn-outline-primary col-xl-2 col-lg-3 col-md-4 col-sm-4 col-sx-6 mt-4">Beküldés</button>
+            <button type="submit" class="btn btn-outline-primary col-xl-2 col-lg-3 col-md-4 col-sm-4 col-sx-6 mt-4">Keresés</button>
         </form>
     </div>
 
@@ -49,6 +49,7 @@
         <table class="table table-striped mt-4 text-center" id="printTable">
             <thead>
             <tr>
+                <th>Sorszám</th>
                 <th>Fizetési határidő</th>
                 <th>Számla kelte</th>
                 <th>Partner</th>
@@ -61,6 +62,7 @@
             </thead>
             <tbody>
             <tr th:each="bill : ${queriedBills}">
+                <td th:text="${bill.id}">12</td>
                 <td th:text="${bill.deadline}">12</td>
                 <td th:text="${bill.releaseDate}">2018-09-22</td>
                 <td th:text="${bill.partner.name}">Telekom</td>
