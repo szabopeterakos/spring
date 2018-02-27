@@ -7,9 +7,6 @@ import com.petertailor.belsokonyveles.repository.PaymentTypeRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Arrays;
 import java.util.Date;
 
 @Service
@@ -43,8 +40,8 @@ public class BillService {
     }
 
     private Bill addPartner(Bill b, String parnerName) {
-        if (parnerName.length() < 1) {
-            throw new IllegalArgumentException("The Partner name must be greater than 1 caracter : " + parnerName);
+        if (parnerName.length() < 2) {
+            throw new IllegalArgumentException("A Partner megnevezés esetben legalább 2 karakter szükséges: " + parnerName);
         }
 
         parnerName = parnerName.trim();
@@ -104,9 +101,10 @@ public class BillService {
         c.setPaymant(b.getPaymant()); // ok for u U kp KP utalás UTALÁS kézpénz KÉZPÉNZ
         c.setReleaseDate(b.getReleaseDate()); // ok
 
-        // hidden values
+        // hidden values - modification date
         c.setLastModify(new Date()); // ok
-        c.setUser("Gabi");
+        // hidden value - modifier
+        c.setUser("username");
 
         return billRepo.save(c);
     }
@@ -122,7 +120,6 @@ public class BillService {
         }
 
         if (current.getTypeQuery().length() == 0 && current.getParterQuery().length() == 0 && current.getDateQuery().length() == 0) {
-            System.out.println("good");
             //no query silt everything
             return billRepo.findAll();
         } else if (current.getTypeQuery().length() != 0 && current.getParterQuery().length() == 0 && current.getDateQuery().length() == 0) {
@@ -147,7 +144,7 @@ public class BillService {
             // query type and interval
             return billRepo.findAllByPaymentTypeTypeNameAndReleaseDateBetween(current.getTypeQuery().toUpperCase(), dates[0], dates[1]);
         } else {
-            throw new IllegalArgumentException("rosszul számoltam ki a lehetőségeket");
+            throw new IllegalArgumentException("rosszul számoltam ki a lehetőségeket :(");
         }
     }
 

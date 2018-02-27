@@ -1,3 +1,11 @@
+insert into ROLES values (1,'USER');
+insert into ROLES values (2,'ADMIN');
+
+insert into USERS values(1,'peti','peti','pass');
+
+insert into USERS_ROLES values (1,1);
+insert into USERS_ROLES values (1,2);
+
 insert into PARTNER (name) values('TELEKOM');
 insert into PARTNER (name) values('VODAFONE');
 insert into PARTNER (name) values('VETUSZ KFT.');

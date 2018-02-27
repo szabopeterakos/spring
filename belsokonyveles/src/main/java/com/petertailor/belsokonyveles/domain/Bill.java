@@ -1,10 +1,8 @@
 package com.petertailor.belsokonyveles.domain;
 
+import com.petertailor.belsokonyveles.service.DateCreater;
+
 import javax.persistence.*;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -39,21 +37,10 @@ public class Bill {
     public Bill() {
     }
 
-    /////////////////////////////////////////////////////////////////////
-
-    // test constructor
     public Bill(String voucherNumber, long amount) {
         this.voucherNumber = voucherNumber;
         this.amount = amount;
     }
-    // test setter
-
-//    public void setPartner(String partner) {
-//
-//        this.partner = partner;
-//    }
-
-    /////////////////////////////////////////////////////////////////////
 
     public Long getId() {
         return id;
@@ -72,7 +59,12 @@ public class Bill {
     }
 
     public void setDeadline(String deadline) {
-        Date c = DateCreater.dateParser(deadline);
+        Date c = null;
+        try {
+            c = DateCreater.dateParser(deadline);
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException("A dátum formátuma nem megfelelő");
+        }
         this.deadline = c;
     }
 
@@ -85,7 +77,12 @@ public class Bill {
     }
 
     public void setReleaseDate(String releaseDate) {
-        Date c = DateCreater.dateParser(releaseDate);
+        Date c = null;
+        try {
+            c = DateCreater.dateParser(releaseDate);
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException("A dátum formátuma nem megfelelő");
+        }
         this.releaseDate = c;
     }
 
@@ -96,7 +93,6 @@ public class Bill {
     public void setPartner(Partner partner) {
         this.partner = partner;
     }
-
 
     public String getVoucherNumber() {
         return voucherNumber;

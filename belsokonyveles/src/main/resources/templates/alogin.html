@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="hu" xmlns:layout="http://www.w3.org/1999/xhtml" layout:decorator="/layouts/alfa"
+      xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+
+</head>
+<body>
+
+<div layout:fragment="content" class="col-sm-8 offset-sm-2 my-login col-sx-12 offset-sx-0">
+    <img src="../static/pics/icon-book.png" th:src="@{/pics/icon-book.png}" class="col-2"/>
+    <h4 class="form-signin-heading text-muted">BookShelf</h4>
+    <h6 class="form-signin-heading text-muted">kifizetés kezelés</h6>
+
+
+    <div class="col-sx-4 offset-sx-4 col-sm-6 offset-sm-3 col-md-4 offset-md-4 pt-5">
+        <form class="form-group-lg" method="post" th:action="@{/login}">
+            <h1 class="form-signin-heading text-muted">Sign In</h1>
+            <input type="text" class="form-control pt-2 pb-2 mt-1" placeholder="Email address" required="" autofocus=""/>
+            <input type="password" class="form-control pt-2 pb-2 mt-2" placeholder="Password" required=""/>
+            <button class="btn btn-block btn-lg btn-primary mt-2" type="submit">
+                Bejelentkezés
+            </button>
+        </form>
+
+        <div th:if="${param.error}">
+            <div class="alert alert-danger">
+                Invalid username and password.
+            </div>
+        </div>
+        <div th:if="${param.logout}">
+            <div class="alert alert-info">
+                You have been logged out.
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

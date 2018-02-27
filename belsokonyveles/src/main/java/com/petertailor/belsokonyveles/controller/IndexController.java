@@ -1,8 +1,8 @@
 package com.petertailor.belsokonyveles.controller;
 
 import com.petertailor.belsokonyveles.domain.Bill;
-import com.petertailor.belsokonyveles.domain.QueryString;
-import com.petertailor.belsokonyveles.domain.StringValues;
+import com.petertailor.belsokonyveles.service.QueryString;
+import com.petertailor.belsokonyveles.service.StringValues;
 import com.petertailor.belsokonyveles.service.BillService;
 import com.petertailor.belsokonyveles.service.ConvertToExcel;
 import com.petertailor.belsokonyveles.service.PartnerService;
@@ -87,7 +87,7 @@ public class IndexController {
 
     @RequestMapping("/login")
     public String login() {
-        return "login";
+        return "alogin";
     }
 
     @RequestMapping("/query")
@@ -144,7 +144,7 @@ public class IndexController {
 
     @RequestMapping("/")
     public String main() {
-        return "login";
+        return "alogin";
     }
 
 }
