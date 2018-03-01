@@ -1,8 +1,9 @@
 package com.petertailor.belsokonyveles.service;
 
+import com.petertailor.belsokonyveles.utilities.DateIntervalValidator;
 import org.junit.Test;
 import java.util.Date;
-import static org.hamcrest.core.IsEqual.equalTo;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 

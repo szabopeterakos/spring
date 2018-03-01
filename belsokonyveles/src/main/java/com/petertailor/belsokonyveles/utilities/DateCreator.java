@@ -1,12 +1,12 @@
-package com.petertailor.belsokonyveles.service;
+package com.petertailor.belsokonyveles.utilities;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class DateCreater {
+public class DateCreator {
 
-    public DateCreater() {
+    public DateCreator() {
     }
 
     public static Date dateParser(String date){

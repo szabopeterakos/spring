@@ -1,12 +1,10 @@
 package com.petertailor.belsokonyveles.controller;
 
 import com.petertailor.belsokonyveles.domain.Bill;
-import com.petertailor.belsokonyveles.service.QueryString;
-import com.petertailor.belsokonyveles.service.StringValues;
-import com.petertailor.belsokonyveles.service.BillService;
-import com.petertailor.belsokonyveles.service.ConvertToExcel;
-import com.petertailor.belsokonyveles.service.PartnerService;
-import com.petertailor.belsokonyveles.service.PaymentTypeService;
+import com.petertailor.belsokonyveles.service.*;
+import com.petertailor.belsokonyveles.utilities.AddBookParams;
+import com.petertailor.belsokonyveles.utilities.ConvertToExcel;
+import com.petertailor.belsokonyveles.utilities.QueryString;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,11 +25,9 @@ import java.util.Date;
 @Controller
 public class IndexController {
 
-
     private BillService billService;
     private PaymentTypeService paymentTypeService;
     private PartnerService partnerService;
-
     private ConvertToExcel convertToExcel;
     private Iterable<Bill> currentBillList;
 
@@ -55,12 +51,11 @@ public class IndexController {
         this.billService = billService;
     }
 
-
     @RequestMapping("/add")
     public String add(Model m) {
         m.addAttribute("bills", billService.findLast3Bill());
         // add empty pojo
-        m.addAttribute("stringValues", new StringValues());
+        m.addAttribute("addBookParams", new AddBookParams());
 
         //start select.option
         m.addAttribute("partners",partnerService.partnerList());
@@ -71,8 +66,8 @@ public class IndexController {
     }
 
     @PostMapping("/post")
-    public String getPostRequest(@ModelAttribute StringValues stringValues, Model m) { // model visszafelé is szállit
-        billService.saveBill(stringValues);
+    public String getPostRequest(@ModelAttribute AddBookParams addBookParams, Model m) {
+        billService.saveBill(addBookParams);
 
         //start select.option
         m.addAttribute("partners",partnerService.partnerList());

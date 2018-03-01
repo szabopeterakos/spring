@@ -1,17 +1,15 @@
 package com.petertailor.belsokonyveles.domain;
 
-import javax.persistence.Entity;
-
-public enum Paymant {
+public enum Payment {
 
     KP("KÉSZPÉNZ"), U("UTALÁS");
 
     private String name;
 
-    Paymant() {
+    Payment() {
     }
 
-    Paymant(String name) {
+    Payment(String name) {
         this.name = name;
     }
 
@@ -22,4 +20,5 @@ public enum Paymant {
     public String getName() {
         return name;
     }
+
 }

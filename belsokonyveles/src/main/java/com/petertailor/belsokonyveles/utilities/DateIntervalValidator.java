@@ -1,6 +1,4 @@
-package com.petertailor.belsokonyveles.service;
-
-import com.petertailor.belsokonyveles.service.DateCreater;
+package com.petertailor.belsokonyveles.utilities;
 
 import java.util.Date;
 
@@ -22,8 +20,8 @@ public class DateIntervalValidator {
         stringDate[1] = s.substring(s.indexOf("-") + 1);
 
         //date parsing and store
-        dates[0] = DateCreater.dateParser(stringDate[0]);
-        dates[1] = DateCreater.dateParser(stringDate[1]);
+        dates[0] = DateCreator.dateParser(stringDate[0]);
+        dates[1] = DateCreator.dateParser(stringDate[1]);
 
         return dates;
     }

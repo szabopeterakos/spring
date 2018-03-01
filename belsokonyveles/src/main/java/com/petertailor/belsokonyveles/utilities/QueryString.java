@@ -1,4 +1,4 @@
-package com.petertailor.belsokonyveles.service;
+package com.petertailor.belsokonyveles.utilities;
 
 public class QueryString {
 

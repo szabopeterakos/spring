@@ -1,10 +1,10 @@
-package com.petertailor.belsokonyveles.service;
+package com.petertailor.belsokonyveles.utilities;
 
 import javax.persistence.Column;
 import javax.persistence.ManyToOne;
 import java.util.Date;
 
-public class StringValues {
+public class AddBookParams {
 
     private String deadline = "";
     private String releaseDate = "";
@@ -13,12 +13,12 @@ public class StringValues {
     private String amount = "";
     private String paymentType = "";
     private String notes = "";
-    private String paymant = "";
+    private String payment = "";
 
-    public StringValues() {
+    public AddBookParams() {
     }
 
-    public StringValues(String deadline, String releaseDate, String partner, String voucherNumber, String amount, String paymentType, String notes, String paymant) {
+    public AddBookParams(String deadline, String releaseDate, String partner, String voucherNumber, String amount, String paymentType, String notes, String paymant) {
         this.deadline = deadline;
         this.releaseDate = releaseDate;
         this.partner = partner;
@@ -26,17 +26,17 @@ public class StringValues {
         this.amount = amount;
         this.paymentType = paymentType;
         this.notes = notes;
-        this.paymant = paymant;
+        this.payment = paymant;
     }
 
-    public StringValues(String deadline, String releaseDate, String partner, String amount, String paymentType, String paymant) {
+    public AddBookParams(String deadline, String releaseDate, String partner, String amount, String paymentType, String paymant) {
 
         this.deadline = deadline;
         this.releaseDate = releaseDate;
         this.partner = partner;
         this.amount = amount;
         this.paymentType = paymentType;
-        this.paymant = paymant;
+        this.payment = paymant;
     }
 
     public String getDeadline() {
@@ -95,17 +95,17 @@ public class StringValues {
         this.notes = notes;
     }
 
-    public String getPaymant() {
-        return paymant;
+    public String getPayment() {
+        return payment;
     }
 
-    public void setPaymant(String paymant) {
-        this.paymant = paymant;
+    public void setPayment(String paymant) {
+        this.payment = paymant;
     }
 
     @Override
     public String toString() {
-        return "StringValues{" +
+        return "AddBookParams{" +
                 "deadline='" + deadline + '\'' +
                 ", releaseDate='" + releaseDate + '\'' +
                 ", partner='" + partner + '\'' +
@@ -113,7 +113,7 @@ public class StringValues {
                 ", amount='" + amount + '\'' +
                 ", paymentType='" + paymentType + '\'' +
                 ", notes='" + notes + '\'' +
-                ", paymant='" + paymant + '\'' +
+                ", paymant='" + payment + '\'' +
                 '}';
     }
 }

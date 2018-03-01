@@ -18,7 +18,7 @@
                 <!-- From -->
                 <div class="col-md-4 offset-md-4 text-center col-sx-12 offset-sx-0">
                     <div>
-                        <form id="myForm" class="my-form" method="post" th:action="@{/post}" th:object="${stringValues}">
+                        <form id="myForm" class="my-form" method="post" th:action="@{/post}" th:object="${addBookParams}">
                             <!-- Text input-->
                             <div class="form-group">
                                 <label class="control-label sr-only">Számla kelte</label>
@@ -51,7 +51,7 @@
                                 </div>
 
                                 <label class="control-label">Fizetés módja</label>
-                                <select class="form-control es-input" th:field="*{paymant}" required="true">
+                                <select class="form-control es-input" th:field="*{payment}" required="true">
                                         <option value="KP">KÉSZPÉNZ</option>
                                         <option value="U">UTALÁS</option>
                                 </select>
@@ -113,7 +113,7 @@
                         <td th:text="${bill.amount}">340 000 Ft</td>
                         <td th:text="${bill.paymentType.typeName}">Banki átutalás</td>
                         <td th:text="${bill.notes}"></td>
-                        <td th:text="${bill.paymant.name}">Közüzemi díj</td>
+                        <td th:text="${bill.payment.name}">Közüzemi díj</td>
                     </tr>
                     </tbody>
                 </table>

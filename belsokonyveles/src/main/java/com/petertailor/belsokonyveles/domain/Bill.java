@@ -1,6 +1,6 @@
 package com.petertailor.belsokonyveles.domain;
 
-import com.petertailor.belsokonyveles.service.DateCreater;
+import com.petertailor.belsokonyveles.utilities.DateCreator;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -28,7 +28,7 @@ public class Bill {
     private String notes;
 
     @Column
-    private Paymant paymant;
+    private Payment payment;
 
     @Column(columnDefinition = "DATE")
     private Date lastModify;
@@ -61,7 +61,7 @@ public class Bill {
     public void setDeadline(String deadline) {
         Date c = null;
         try {
-            c = DateCreater.dateParser(deadline);
+            c = DateCreator.dateParser(deadline);
         } catch (NumberFormatException e) {
             throw new IllegalArgumentException("A dátum formátuma nem megfelelő");
         }
@@ -79,7 +79,7 @@ public class Bill {
     public void setReleaseDate(String releaseDate) {
         Date c = null;
         try {
-            c = DateCreater.dateParser(releaseDate);
+            c = DateCreator.dateParser(releaseDate);
         } catch (NumberFormatException e) {
             throw new IllegalArgumentException("A dátum formátuma nem megfelelő");
         }
@@ -126,24 +126,24 @@ public class Bill {
         this.notes = notes;
     }
 
-    public Paymant getPaymant() {
-        return paymant;
+    public Payment getPayment() {
+        return payment;
     }
 
-    public void setPaymant(Paymant paymant) {
-        this.paymant = paymant;
+    public void setPayment(Payment payment) {
+        this.payment = payment;
     }
 
     public void setPaymant(String paymant) {
-        for (Paymant c : Paymant.values()) {
+        for (Payment c : Payment.values()) {
             if (c.getName().equals(paymant.toUpperCase())) {
-                this.paymant = c;
+                this.payment = c;
             }
         }
         if (paymant.toLowerCase().equals("u")) {
-            this.paymant = Paymant.U;
+            this.payment = Payment.U;
         } else if (paymant.toLowerCase().equals("kp")) {
-            this.paymant = Paymant.KP;
+            this.payment = Payment.KP;
         } else {
             throw new IllegalArgumentException("this value is not allowanced : " + paymant);
         }
@@ -165,7 +165,7 @@ public class Bill {
         this.user = user;
     }
 
-    public Bill(Date deadline, Date releaseDate, Partner partner, String voucherNumber, long amount, PaymentType paymentType, String notes, Paymant paymant, Date lastModify, String user) {
+    public Bill(Date deadline, Date releaseDate, Partner partner, String voucherNumber, long amount, PaymentType paymentType, String notes, Payment payment, Date lastModify, String user) {
 
         this.deadline = deadline;
         this.releaseDate = releaseDate;
@@ -174,7 +174,7 @@ public class Bill {
         this.amount = amount;
         this.paymentType = paymentType;
         this.notes = notes;
-        this.paymant = paymant;
+        this.payment = payment;
         this.lastModify = lastModify;
         this.user = user;
     }

@@ -4,6 +4,9 @@ import com.petertailor.belsokonyveles.domain.*;
 import com.petertailor.belsokonyveles.repository.BillRepo;
 import com.petertailor.belsokonyveles.repository.PartnerRepo;
 import com.petertailor.belsokonyveles.repository.PaymentTypeRepo;
+import com.petertailor.belsokonyveles.utilities.AddBookParams;
+import com.petertailor.belsokonyveles.utilities.DateIntervalValidator;
+import com.petertailor.belsokonyveles.utilities.QueryString;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -37,6 +40,57 @@ public class BillService {
 
     public Iterable<Bill> findLast3Bill() {
         return billRepo.findTop3ByOrderByIdDesc();
+    }
+
+    public Iterable<Bill> querySelector(QueryString qs) {
+        Date[] dates = null;
+
+        String type = qs.getTypeQuery().toUpperCase();
+        String partner = qs.getParterQuery().toUpperCase();
+        String dateString = qs.getDateQuery();
+
+        // date string validation against parse exception
+        if (dateString.length() != 0)
+            dates = DateIntervalValidator.intervallCreator(dateString);
+        int queryTypeBits = 0;
+        //0 - query all,
+        //100 - type,
+        //10 - partner,
+        //1 - date,
+        //110 - type and partner,
+        //11 - partner and date,
+        //101 - type and date
+        //111 - type and partner and date
+
+        if (type.length() != 0) {
+            queryTypeBits += 100;
+        }
+        if (partner.length() != 0) {
+            queryTypeBits += 10;
+        }
+        if (dateString.length() != 0) {
+            queryTypeBits += 1;
+        }
+
+        if (queryTypeBits == 0) { //0 - query all
+            return billRepo.findAll();
+        } else if (queryTypeBits == 100) { //100 - type
+            return billRepo.findAllByPaymentTypeTypeName(type);
+        } else if (queryTypeBits == 10) { //10 - partner
+            return billRepo.findAllByPartnerName(partner);
+        } else if (queryTypeBits == 1) { //1 - date
+            return billRepo.findAllByReleaseDateBetween(dates[0], dates[1]);
+        } else if (queryTypeBits == 110) { //110 - type and partner
+            return billRepo.findAllByPaymentTypeTypeNameAndPartnerName(type, partner);
+        } else if (queryTypeBits == 11) { //11 - partner and date
+            return billRepo.findAllByPartnerNameAndReleaseDateBetween(partner, dates[0], dates[1]);
+        } else if (queryTypeBits == 101) { //101 - type and date
+            return billRepo.findAllByPaymentTypeTypeNameAndReleaseDateBetween(type, dates[0], dates[1]);
+        } else if (queryTypeBits == 111) { //111 - type and partner and date
+            return billRepo.findAllByPaymentTypeTypeNameAndPartnerNameAndReleaseDateBetween(type, partner, dates[0], dates[1]);
+        } else {
+            throw new IllegalArgumentException("rosszul számoltam ki a lehetőségeket 😞");
+        }
     }
 
     private Bill addPartner(Bill b, String parnerName) {
@@ -77,7 +131,7 @@ public class BillService {
         return c;
     }
 
-    public Bill saveBill(StringValues b) {
+    public Bill saveBill(AddBookParams b) {
         Bill c = new Bill();
 
         addPaymentType(c, b.getPaymentType()); // if exist find that, if not create one, if name "" throw Exception THE PAYMENT IS UPPERCASE
@@ -98,7 +152,7 @@ public class BillService {
 
         c.setAmount(Long.parseLong(b.getAmount()));
         c.setVoucherNumber(b.getVoucherNumber());
-        c.setPaymant(b.getPaymant()); // ok for u U kp KP utalás UTALÁS kézpénz KÉZPÉNZ
+        c.setPaymant(b.getPayment()); // ok for u U kp KP utalás UTALÁS kézpénz KÉZPÉNZ
         c.setReleaseDate(b.getReleaseDate()); // ok
 
         // hidden values - modification date
@@ -109,44 +163,6 @@ public class BillService {
         return billRepo.save(c);
     }
 
-    public Iterable<Bill> querySelector(QueryString qs) {
-        //trimmed uppercase version
-        QueryString current = new QueryString(qs.getTypeQuery().toUpperCase(), qs.getParterQuery().toUpperCase(), qs.getDateQuery());
-        Date[] dates = null;
-
-        // date string validation against pharse exception
-        if (current.getDateQuery().length() != 0) {
-            dates = DateIntervalValidator.intervallCreator(current.getDateQuery());
-        }
-
-        if (current.getTypeQuery().length() == 0 && current.getParterQuery().length() == 0 && current.getDateQuery().length() == 0) {
-            //no query silt everything
-            return billRepo.findAll();
-        } else if (current.getTypeQuery().length() != 0 && current.getParterQuery().length() == 0 && current.getDateQuery().length() == 0) {
-            // just type query
-            return billRepo.findAllByPaymentTypeTypeName(current.getTypeQuery().toUpperCase());
-        } else if (current.getTypeQuery().length() == 0 && current.getParterQuery().length() != 0 && current.getDateQuery().length() == 0) {
-            //just partner query
-            return billRepo.findAllByPartnerName(current.getParterQuery().toUpperCase());
-        } else if (current.getTypeQuery().length() == 0 && current.getParterQuery().length() == 0 && current.getDateQuery().length() != 0) {
-            //just date query
-            return billRepo.findAllByReleaseDateBetween(dates[0], dates[1]);
-        } else if (current.getTypeQuery().length() != 0 && current.getParterQuery().length() != 0 && current.getDateQuery().length() != 0) {
-            // query 3 values
-            return billRepo.findAllByPaymentTypeTypeNameAndPartnerNameAndReleaseDateBetween(current.getTypeQuery().toUpperCase(), current.getParterQuery().toUpperCase(), dates[0], dates[1]);
-        } else if (current.getTypeQuery().length() != 0 && current.getParterQuery().length() != 0 && current.getDateQuery().length() == 0) {
-            // query type and partner
-            return billRepo.findAllByPaymentTypeTypeNameAndPartnerName(current.getTypeQuery().toUpperCase(), current.getParterQuery().toUpperCase());
-        } else if (current.getTypeQuery().length() == 0 && current.getParterQuery().length() != 0 && current.getDateQuery().length() != 0) {
-            // query partner and interval
-            return billRepo.findAllByPartnerNameAndReleaseDateBetween(current.getParterQuery().toUpperCase(), dates[0], dates[1]);
-        } else if (current.getTypeQuery().length() != 0 && current.getParterQuery().length() == 0 && current.getDateQuery().length() != 0) {
-            // query type and interval
-            return billRepo.findAllByPaymentTypeTypeNameAndReleaseDateBetween(current.getTypeQuery().toUpperCase(), dates[0], dates[1]);
-        } else {
-            throw new IllegalArgumentException("rosszul számoltam ki a lehetőségeket :(");
-        }
-    }
 
     public Long sumBillsAmount(Iterable<Bill> bills) {
         Long sum = 0L;

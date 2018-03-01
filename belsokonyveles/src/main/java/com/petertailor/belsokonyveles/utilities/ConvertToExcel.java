@@ -1,4 +1,4 @@
-package com.petertailor.belsokonyveles.service;
+package com.petertailor.belsokonyveles.utilities;
 
 import com.petertailor.belsokonyveles.domain.Bill;
 import org.apache.poi.hssf.util.HSSFColor;
@@ -10,8 +10,6 @@ import org.springframework.stereotype.Service;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 
 @Service
@@ -131,7 +129,7 @@ public class ConvertToExcel {
 
             // payment group
             cell = row.createCell(7);
-            cell.setCellValue(c.getPaymant().getName());
+            cell.setCellValue(c.getPayment().getName());
             cell.setCellStyle(rowInit % 2 == 0 ? cellStyle2 : cellStyle);
 
         }

@@ -1,6 +1,5 @@
 //package com.petertailor.belsokonyveles.service;
 //
-//
 //import com.petertailor.belsokonyveles.domain.Role;
 //import com.petertailor.belsokonyveles.domain.User;
 //import org.springframework.security.core.GrantedAuthority;
@@ -26,7 +25,6 @@
 //        for (Role role : roles) {
 //            authorities.add(new SimpleGrantedAuthority(role.getRole()));
 //        }
-//
 //        return authorities;
 //    }
 //
@@ -41,7 +39,7 @@
 //    }
 //
 //    @Override
-//    public boolean isAccountNonExpired() { // lejárt e at account
+//    public boolean isAccountNonExpired() { // lejárte at account
 //        return true;
 //    }
 //
