@@ -11,19 +11,20 @@ public class ClosestPairOfPoint {
     /**
      * This application reads a text file with LineScanner.arrayCreator() where each line contains the coordinates
      * of a multidimensional point these values stored in List where lines are also List-s filled Double values.
-     *
+     * <p>
      * Then found the closest pair of points in the list.
      * If the program has found the closest pair of points,
      * it send the line numbers and the coordinates of the two closest points.
-     *
-     *
      */
 
     private LineScanner lineScanner = LineScanner.getScannerInstance();
     private EuclideanDistance euclideanDistance = new EuclideanDistance();
 
     // find the closest pair of points
-    public List<List<Double>> findClosestDoubles(List<List<Double>> lists) {
+    private List<List<Double>> findClosestDoubles(List<List<Double>> lists) {
+        if (lists.size() == 1) {
+            throw new IllegalArgumentException("I have just found one point!");
+        }
 
         List<Double> firstList = lists.get(0);
         List<Double> secondList = lists.get(1);
@@ -81,6 +82,9 @@ public class ClosestPairOfPoint {
 
     // the main logic of the application
     public String mainLogic(File file) {
+        if (!file.exists()) {
+            throw new IllegalArgumentException("This file is not exist: " + file);
+        }
 
         List<List<Double>> allList = lineScanner.arrayCreator(file); // a list form file
         List<List<Double>> resultLists = findClosestDoubles(allList); //a list from allList, this include just the 2 proper list
