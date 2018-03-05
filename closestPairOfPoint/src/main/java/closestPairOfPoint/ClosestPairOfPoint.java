@@ -8,6 +8,17 @@ import java.util.List;
 
 public class ClosestPairOfPoint {
 
+    /**
+     * This application reads a text file with LineScanner.arrayCreator() where each line contains the coordinates
+     * of a multidimensional point these values stored in List where lines are also List-s filled Double values.
+     *
+     * Then found the closest pair of points in the list.
+     * If the program has found the closest pair of points,
+     * it send the line numbers and the coordinates of the two closest points.
+     *
+     *
+     */
+
     private LineScanner lineScanner = LineScanner.getScannerInstance();
     private EuclideanDistance euclideanDistance = new EuclideanDistance();
 
@@ -60,8 +71,8 @@ public class ClosestPairOfPoint {
 
                 answerBuilder.append(j < 1 ? currentValue : "\t" + currentValue);
             }
-
             answerBuilder.append("\n");
+
         }
 
         String printAbleString = answerBuilder.toString();
