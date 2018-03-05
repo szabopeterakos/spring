@@ -25,8 +25,8 @@ public class BillServiceTest {
     @Before
     public void init() {
         Partner partner1 = new Partner("TESLA");
-        billList.add(new Bill(new Date(),new Date(),partner1,"KKHH32",300L, new PaymentType("PT"),"notes", Payment.KP,new Date(),"USERNAME"));
-        billList.add(new Bill(new Date(),new Date(),partner1,"KKHH32",300L, new PaymentType("PT"),"notes", Payment.KP,new Date(),"USERNAME"));
+        billList.add(new Bill(new Date(), new Date(), partner1, "KKHH32", 300L, new PaymentType("PT"), "notes", Payment.KP, new Date(), "USERNAME"));
+        billList.add(new Bill(new Date(), new Date(), partner1, "KKHH32", 300L, new PaymentType("PT"), "notes", Payment.KP, new Date(), "USERNAME"));
     }
 
     @Test
@@ -37,7 +37,7 @@ public class BillServiceTest {
     @Test
     public void testSum() {
         Long sum = billService.sumBillsAmount(billList);
-        assertEquals(sum,new Long(600));
+        assertEquals(sum, new Long(600));
     }
 
 }
