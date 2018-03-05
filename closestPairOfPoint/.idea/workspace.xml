@@ -28,8 +28,8 @@
       <file leaf-file-name="ClosestPairOfPointTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/closestPairOfPoint/ClosestPairOfPointTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6">
-              <caret line="42" column="54" lean-forward="false" selection-start-line="42" selection-start-column="38" selection-end-line="42" selection-end-column="54" />
+            <state relative-caret-position="333">
+              <caret line="75" column="9" lean-forward="true" selection-start-line="75" selection-start-column="9" selection-end-line="75" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3290#3291#0" expanded="true" />
@@ -46,8 +46,8 @@
       <file leaf-file-name="ClosestPairOfPoint.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/closestPairOfPoint/ClosestPairOfPoint.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="784">
-              <caret line="85" column="49" lean-forward="false" selection-start-line="85" selection-start-column="49" selection-end-line="85" selection-end-column="49" />
+            <state relative-caret-position="1328">
+              <caret line="83" column="51" lean-forward="false" selection-start-line="83" selection-start-column="51" selection-end-line="83" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -240,6 +240,25 @@
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <module />
     </configuration>
+    <configuration name="ClosestPairOfPoint" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="closestPairOfPoint.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="closestPairOfPoint.ClosestPairOfPoint" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="closestPairOfPoint" />
+      <envs />
+    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" />
@@ -253,26 +272,6 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
       <envs />
-    </configuration>
-    <configuration name="All in closestPairOfPoint" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="closestPairOfPoint" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="package" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
     </configuration>
     <configuration name="EuclideanDistanceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
@@ -435,19 +434,19 @@
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.All in closestPairOfPoint" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.LineScannerTest" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.EuclideanDistanceTest.With2_2DimensionTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.EuclideanDistanceTest" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.closestPairOfPoint in closestPairOfPoint" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.LineScannerTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.EuclideanDistanceTest.With2_2DimensionTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.EuclideanDistanceTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.closestPairOfPoint in closestPairOfPoint" />
+      <item index="4" class="java.lang.String" itemvalue="Application.ClosestPairOfPoint" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="JUnit.closestPairOfPoint in closestPairOfPoint" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.EuclideanDistanceTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.EuclideanDistanceTest.With2_2DimensionTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.LineScannerTest" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.All in closestPairOfPoint" />
+        <item index="1" class="java.lang.String" itemvalue="Application.ClosestPairOfPoint" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.EuclideanDistanceTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.EuclideanDistanceTest.With2_2DimensionTest" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.LineScannerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -464,7 +463,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1520256717200</updated>
-      <workItem from="1520256721477" duration="19268000" />
+      <workItem from="1520256721477" duration="19918000" />
     </task>
     <servers />
   </component>
@@ -481,12 +480,6 @@
     <history-entry file="EuclideanDistanceTest_With2_2DimensionTest - 2018.03.05 at 20h 07m 59s.xml">
       <configuration name="EuclideanDistanceTest.With2_2DimensionTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LineScannerTest - 2018.03.05 at 19h 57m 52s.xml">
-      <configuration name="LineScannerTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="LineScannerTest - 2018.03.05 at 19h 58m 36s.xml">
-      <configuration name="LineScannerTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="LineScannerTest - 2018.03.05 at 19h 58m 50s.xml">
       <configuration name="LineScannerTest" configurationId="JUnit" />
     </history-entry>
@@ -499,9 +492,15 @@
     <history-entry file="closestPairOfPoint_in_closestPairOfPoint - 2018.03.05 at 20h 17m 04s.xml">
       <configuration name="closestPairOfPoint in closestPairOfPoint" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="closestPairOfPoint_in_closestPairOfPoint - 2018.03.05 at 20h 24m 54s.xml">
+      <configuration name="closestPairOfPoint in closestPairOfPoint" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="closestPairOfPoint_in_closestPairOfPoint - 2018.03.05 at 20h 28m 51s.xml">
+      <configuration name="closestPairOfPoint in closestPairOfPoint" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19268000" />
+    <option name="totallyTimeSpent" value="19918000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -772,8 +771,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/closestPairOfPoint/ClosestPairOfPointTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6">
-          <caret line="42" column="54" lean-forward="false" selection-start-line="42" selection-start-column="38" selection-end-line="42" selection-end-column="54" />
+        <state relative-caret-position="333">
+          <caret line="75" column="9" lean-forward="true" selection-start-line="75" selection-start-column="9" selection-end-line="75" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#3290#3291#0" expanded="true" />
@@ -788,8 +787,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/closestPairOfPoint/ClosestPairOfPoint.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="784">
-          <caret line="85" column="49" lean-forward="false" selection-start-line="85" selection-start-column="49" selection-end-line="85" selection-end-column="49" />
+        <state relative-caret-position="1328">
+          <caret line="83" column="51" lean-forward="false" selection-start-line="83" selection-start-column="51" selection-end-line="83" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

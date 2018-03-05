@@ -10,17 +10,15 @@ public class ClosestPairOfPoint {
 
     /**
      * This application reads a text file with LineScanner.arrayCreator() where each line contains the coordinates
-     * of a multidimensional point these values stored in List where lines are also List-s filled Double values.
+     * of a multidimensional point. These values stored in List where lines are Points.
+     * Point.class stores the coordinates of a points and its index in the input file.
      * <p>
-     * Then find the closest pair of points in the list.
-     * <p>
-     * <p>
-     * <p>
-     * <p>
-     * <p>
-     * <p>
-     * If the program has found the closest pair of points,
-     * it send the line numbers and the coordinates of the two closest points.
+     * To find the closest points the algorithm goes through the list and calculates the
+     * Euclidean distance of all point pairs and stores the pair with a minimal distance.
+     *
+     * The asymptotical running time is n^2 because of the embedded for cycles. (~n*n/2)
+     *
+     * To run the program: You can use the main method with proper filename;
      */
 
     private LineScanner lineScanner = LineScanner.getScannerInstance();
@@ -80,11 +78,19 @@ public class ClosestPairOfPoint {
             throw new IllegalArgumentException("This file is not exist: " + file);
         }
 
-        List<Point> allList = lineScanner.arrayCreator(file); // a list form file
-        List<Point> resultLists = findClosestDoubles(allList); //a list from allList, this include just the 2 proper list
+        List<Point> allList = lineScanner.arrayCreator(file);
+        List<Point> resultLists = findClosestDoubles(allList);
 
-        String resultString = printer(resultLists); // print proper values
+        String resultString = printer(resultLists);
         return resultString;
+    }
+
+    public static void main(String[] args) {
+        String filePath = "src/main/resources/sample_input_3_1000.tsv";
+        File f = new File(filePath);
+
+        ClosestPairOfPoint ccp = new ClosestPairOfPoint();
+        System.out.println(ccp.mainLogic(f));
     }
 
 }
