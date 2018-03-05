@@ -53,7 +53,7 @@ public class ClosestPairOfPointTest {
         String result = cpp.mainLogic(inputNotExist);
     }
 
-    // some places I found double values, like 9438.4 instead of 19438 in output file !!!
+    // some places I found double values, like 19438.4 instead of 19438 in output file !!!
     @Test
     public void MatchesInput100_100Test() {
         String result = cpp.mainLogic(inputfile100_100);
@@ -84,6 +84,5 @@ public class ClosestPairOfPointTest {
         String result = cpp.mainLogic(inputfile10_100);
         assertEquals(result, outputfile10_100);
     }
-
 
 }

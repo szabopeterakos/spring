@@ -17,29 +17,31 @@ public class LineScanner {
         return SCANNER;
     }
 
-    public List<List<Double>> arrayCreator(File file) {
+    public List<Point> arrayCreator(File file) {
 
-        List<List<Double>> resultList = new ArrayList<>();
+        List<Point> resultList = new ArrayList<>();
 
         // File scanner
         try (Scanner scn = new Scanner(file)) {
-
+            
+            int lineIndex = 1;
             while (scn.hasNextLine()) {
 
                 String line = scn.nextLine();
+
+                Point currentPoint = new Point();
                 List<Double> currentList;
 
                 // Line scanner
                 try (Scanner scannerInner = new Scanner(line)) {
-
                     currentList = new ArrayList<>();
                     while (scannerInner.hasNextDouble()) {
                         currentList.add(scannerInner.nextDouble());
                     }
-
                 }
-
-                resultList.add(currentList);
+                currentPoint.setCordinates(currentList);
+                currentPoint.setIndex(lineIndex++);
+                resultList.add(currentPoint);
 
             }
 
