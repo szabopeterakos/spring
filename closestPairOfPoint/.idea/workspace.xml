@@ -25,18 +25,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ClosestPairOfPointTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ClosestPairOfPointTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/closestPairOfPoint/ClosestPairOfPointTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+            <state relative-caret-position="443">
+              <caret line="82" column="34" lean-forward="false" selection-start-line="82" selection-start-column="34" selection-end-line="82" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3303#3304#0" expanded="true" />
-                <element signature="e#3366#3367#0" expanded="true" />
-                <element signature="e#3459#3460#0" expanded="true" />
-                <element signature="e#3521#3522#0" expanded="true" />
-                <element signature="e#3673#3674#0" expanded="true" />
+                <element signature="e#3290#3291#0" expanded="true" />
+                <element signature="e#3353#3354#0" expanded="true" />
+                <element signature="e#3446#3447#0" expanded="true" />
+                <element signature="e#3508#3509#0" expanded="true" />
+                <element signature="e#3600#3601#0" expanded="true" />
+                <element signature="e#3660#3661#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -52,11 +53,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ClosestPairOfPoint.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ClosestPairOfPoint.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/closestPairOfPoint/ClosestPairOfPoint.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="85" column="80" lean-forward="false" selection-start-line="85" selection-start-column="80" selection-end-line="85" selection-end-column="80" />
+            <state relative-caret-position="1180">
+              <caret line="74" column="39" lean-forward="false" selection-start-line="74" selection-start-column="39" selection-end-line="74" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -91,8 +92,8 @@
         <option value="$PROJECT_DIR$/src/main/java/closestPairOfPoint/LineScanner.java" />
         <option value="$PROJECT_DIR$/src/main/resources/sample_input_0_1.tsv" />
         <option value="$PROJECT_DIR$/src/main/resources/sample_input_0_0.tsv" />
-        <option value="$PROJECT_DIR$/src/test/java/closestPairOfPoint/ClosestPairOfPointTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/closestPairOfPoint/ClosestPairOfPoint.java" />
+        <option value="$PROJECT_DIR$/src/test/java/closestPairOfPoint/ClosestPairOfPointTest.java" />
       </list>
     </option>
   </component>
@@ -472,7 +473,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1520256717200</updated>
-      <workItem from="1520256721477" duration="14181000" />
+      <workItem from="1520256721477" duration="14551000" />
     </task>
     <servers />
   </component>
@@ -483,17 +484,17 @@
     <history-entry file="ClosestPairOfPointTest - 2018.03.05 at 18h 52m 01s.xml">
       <configuration name="ClosestPairOfPointTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="ClosestPairOfPointTest - 2018.03.05 at 18h 57m 43s.xml">
+      <configuration name="ClosestPairOfPointTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ClosestPairOfPointTest - 2018.03.05 at 18h 58m 13s.xml">
+      <configuration name="ClosestPairOfPointTest" configurationId="JUnit" />
+    </history-entry>
     <history-entry file="ClosestPairOfPointTest_NoPointFoundedTest - 2018.03.05 at 18h 48m 58s.xml">
       <configuration name="ClosestPairOfPointTest.NoPointFoundedTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="ClosestPairOfPointTest_NoPointFoundedTest - 2018.03.05 at 18h 50m 29s.xml">
       <configuration name="ClosestPairOfPointTest.NoPointFoundedTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ClosestPairOfPointTest_OnePointFoundedTest - 2018.03.05 at 18h 46m 30s.xml">
-      <configuration name="ClosestPairOfPointTest.OnePointFoundedTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ClosestPairOfPointTest_OnePointFoundedTest - 2018.03.05 at 18h 47m 11s.xml">
-      <configuration name="ClosestPairOfPointTest.OnePointFoundedTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="ClosestPairOfPointTest_OnePointFoundedTest - 2018.03.05 at 18h 48m 06s.xml">
       <configuration name="ClosestPairOfPointTest.OnePointFoundedTest" configurationId="JUnit" />
@@ -509,7 +510,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14181000" />
+    <option name="totallyTimeSpent" value="14551000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -561,14 +562,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/closestPairOfPoint/ClosestPairOfPoint.java</url>
-          <line>24</line>
-          <properties />
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="6" />
     </breakpoint-manager>
     <watches-manager />
@@ -755,21 +748,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/closestPairOfPoint/ClosestPairOfPointTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3303#3304#0" expanded="true" />
-            <element signature="e#3366#3367#0" expanded="true" />
-            <element signature="e#3459#3460#0" expanded="true" />
-            <element signature="e#3521#3522#0" expanded="true" />
-            <element signature="e#3673#3674#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/closestPairOfPoint/LineScanner.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="11">
@@ -780,10 +758,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/closestPairOfPoint/ClosestPairOfPoint.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="85" column="80" lean-forward="false" selection-start-line="85" selection-start-column="80" selection-end-line="85" selection-end-column="80" />
+        <state relative-caret-position="1180">
+          <caret line="74" column="39" lean-forward="false" selection-start-line="74" selection-start-column="39" selection-end-line="74" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/closestPairOfPoint/ClosestPairOfPointTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="82" column="34" lean-forward="false" selection-start-line="82" selection-start-column="34" selection-end-line="82" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3290#3291#0" expanded="true" />
+            <element signature="e#3353#3354#0" expanded="true" />
+            <element signature="e#3446#3447#0" expanded="true" />
+            <element signature="e#3508#3509#0" expanded="true" />
+            <element signature="e#3600#3601#0" expanded="true" />
+            <element signature="e#3660#3661#0" expanded="true" />
           </folding>
         </state>
       </provider>

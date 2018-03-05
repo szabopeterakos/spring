@@ -73,7 +73,6 @@ public class ClosestPairOfPoint {
                 answerBuilder.append(j < 1 ? currentValue : "\t" + currentValue);
             }
             answerBuilder.append("\n");
-
         }
 
         String printAbleString = answerBuilder.toString();
