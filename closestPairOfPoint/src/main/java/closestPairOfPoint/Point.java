@@ -5,7 +5,7 @@ import java.util.List;
 public class Point {
 
     private int index;
-    private List<Double> cordinates;
+    private List<Double> coordinates;
 
     public Point() {
     }
@@ -19,10 +19,10 @@ public class Point {
     }
 
     public List<Double> getCordinates() {
-        return cordinates;
+        return coordinates;
     }
 
     public void setCordinates(List<Double> cordinates) {
-        this.cordinates = cordinates;
+        this.coordinates = cordinates;
     }
 }
