@@ -12,7 +12,7 @@ public class YourSolution implements Solution {
      * It can recognise the current grid value can walk or not.
      * The dynamic bug appearing is not part of this solution.
      * <p>
-     * The maze algorithm creates a list with Spots,
+     * The maze algorithm creates a list of Spots,
      * and the instructionsParser() can generate a List of Instruction from that.
      */
 
@@ -164,8 +164,7 @@ public class YourSolution implements Solution {
         allSpots.addAll(path);
         Collections.reverse(path);
         allSpots.addAll(path);
-
-
+        
         List<Instruction> instructionList = new ArrayList<>();
 
         for (int i = 1; i < allSpots.size(); i++) {
@@ -188,16 +187,11 @@ public class YourSolution implements Solution {
             }
 
             if (i == allSpots.size() / 2) {
-                instructionList.add(Instruction.PAUSE);
-                instructionList.add(Instruction.PAUSE);
-                instructionList.add(Instruction.PAUSE);
-                instructionList.add(Instruction.PAUSE);
-                instructionList.add(Instruction.PAUSE);
+                for (int j = 0; j < 5; j++) {
+                    instructionList.add(Instruction.PAUSE);
+                }
             }
         }
-
-//        System.out.println(allSpots);
-//        System.out.println(instructionList);
 
         return instructionList;
     }
