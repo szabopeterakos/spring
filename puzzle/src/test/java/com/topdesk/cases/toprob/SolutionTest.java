@@ -222,6 +222,7 @@ public class SolutionTest {
                 checkValidPostion(grid, time, rob);
                 kitchenTime = 0;
             }
+
         }
 
         assertTrue("rob did not spend enough time in the kitchen", atLeastOnceEnoughKitchenTime);

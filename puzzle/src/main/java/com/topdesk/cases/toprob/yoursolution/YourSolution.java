@@ -5,32 +5,48 @@ import java.util.*;
 import com.topdesk.cases.toprob.*;
 
 public class YourSolution implements Solution {
+
+    /**
+     * This program can find the best route from room to kitchen and back;
+     * It uses the A-Star algorithm to find the shortest way but just in a static grid.
+     * It can recognise the current grid value can walk or not.
+     * The dynamic bug appearing is not part of this solution.
+     * <p>
+     * The maze algorithm creates a list with Spots,
+     * and the instructionsParser() can generate a List of Instruction from that.
+     */
+
     @Override
     public List<Instruction> solve(Grid grid, int time) {
-        if (grid == null) throw new NullPointerException("The Grid is must be not null.");
-        if (time < 0) throw new IllegalArgumentException("The time must be more than -1 second. : " + time);
 
-        List<Instruction> instructionList = new ArrayList<>();
-        Set<Coordinate> holes = grid.getHoles();
-        Set<Spot> holeSpots = new HashSet<>();
-        Spot bug = new Spot(grid.getBug(time));
+        //null, time exceptions
+        if (grid == null) throw new NullPointerException("The Grid is must be not null.");
+        if (time < 0) throw new IllegalArgumentException("The time must be more than -1 : " + time);
+
         int gridWebHeight = grid.getHeight();
         int gridWebWidth = grid.getWidth();
 
+        Set<Coordinate> holes = grid.getHoles(); // with Coordinates
+        Set<Spot> holeSpots = new HashSet<>(); // with Spots
+
+        Spot bug = new Spot(grid.getBug(time)); // a bug
+
+        List<Instruction> instructionList = new ArrayList<>(); // instructions
+
+        // kitchen, room x,y name
         Spot kitchen = new Spot(grid.getKitchen().getY(), grid.getKitchen().getX());
         Spot room = new Spot(grid.getRoom().getY(), grid.getRoom().getX());
         kitchen.setName("K");
         room.setName("R");
 
-        Spot[][] gridWeb = new Spot[gridWebHeight][gridWebWidth];
+        Spot[][] gridWeb = new Spot[gridWebHeight][gridWebWidth]; // grid with Spots
 
-        // initialize blocks
-
+        // holes coordinate to Spot
         for (Coordinate c : holes) {
             holeSpots.add(new Spot(c));
         }
 
-        // fill routes, kitchen, room
+        // fill myGrid with routes, kitchen, room
         for (int i = 0; i < gridWeb.length; i++) {
             for (int j = 0; j < gridWeb[i].length; j++) {
                 // kitchen to grid
@@ -45,7 +61,7 @@ public class YourSolution implements Solution {
             }
         }
 
-        // fill with holes
+        // fill myGrid with holes
         for (Spot[] arr : gridWeb) {
             for (Spot c : arr) {
                 if (holeSpots.contains(c)) {
@@ -54,32 +70,13 @@ public class YourSolution implements Solution {
             }
         }
 
-        // -- initialize blocks
-
         // GUI
-        System.out.println("");
-        for (int i = 0; i < gridWeb.length; i++) {
-            for (int j = 0; j < gridWeb[i].length; j++) {
-                Spot current = gridWeb[i][j];
-                if (current.equals(room)) {
-                    System.out.print("R ");
-                } else if (current.equals(kitchen)) {
-                    System.out.print("K ");
-                } else if (holeSpots.contains(current)) {
-                    System.out.print("O ");
-                } else if (bug.equals(current)) {
-                    System.out.print("x ");
-                } else {
-                    System.out.print(". ");
-                }
-            }
-            System.out.println();
-        }
-        System.out.println("");
+        gui(gridWeb, room, kitchen, holeSpots, bug);
 
-
+        // maze algorithm
         instructionList = mazeAlgorithm(gridWeb, room, kitchen);
 
+        // check values
         System.out.println(instructionList);
 
         return instructionList;
@@ -100,6 +97,7 @@ public class YourSolution implements Solution {
             }
         }
 
+        // find the best route
         while (openSet.size() > 0) {
 
             int winner = 0;
@@ -111,7 +109,7 @@ public class YourSolution implements Solution {
 
             Spot currentSpot = openSet.get(winner);
 
-            //end
+            // when it has founded
             if (currentSpot.equals(end)) {
                 Spot temp = currentSpot;
                 path.add(temp);
@@ -121,18 +119,17 @@ public class YourSolution implements Solution {
                     temp = temp.getParent();
                 }
 
-//                System.out.println("DONE!");
-
-
                 return instructionsParser(path);
             }
 
+            // re check possibilities
             openSet.remove(currentSpot);
             closedSet.add(currentSpot);
 
-            // check neighbors //
+            // query current neighbors //
             List<Spot> currentNeighborsList = currentSpot.getNeighbors();
 
+            // find the next point
             for (int i = 0; i < currentNeighborsList.size(); i++) {
                 Spot currentNeighbor = currentNeighborsList.get(i);
 
@@ -155,8 +152,9 @@ public class YourSolution implements Solution {
 
         }
 
+        // if no solution
         System.out.println("NO SOLUTION");
-        return null;
+        return instructionsParser(path);
 
     }
 
@@ -202,6 +200,28 @@ public class YourSolution implements Solution {
 //        System.out.println(instructionList);
 
         return instructionList;
+    }
+
+    private void gui(Spot[][] gridWeb, Spot room, Spot kitchen, Set<Spot> holeSpots, Spot bug) {
+        System.out.println("");
+        for (int i = 0; i < gridWeb.length; i++) {
+            for (int j = 0; j < gridWeb[i].length; j++) {
+                Spot current = gridWeb[i][j];
+                if (current.equals(room)) {
+                    System.out.print("R ");
+                } else if (current.equals(kitchen)) {
+                    System.out.print("K ");
+                } else if (holeSpots.contains(current)) {
+                    System.out.print("O ");
+                } else if (bug.equals(current)) {
+                    System.out.print("x ");
+                } else {
+                    System.out.print(". ");
+                }
+            }
+            System.out.println();
+        }
+        System.out.println("");
     }
 
 }
