@@ -1,8 +1,10 @@
+package com.topdesk.cases.toprob;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Spot{
+public class Spot {
 
     private String name = ".";
     private double f;
@@ -80,6 +82,12 @@ public class Spot{
         this.name = name;
     }
 
+    public Spot(Coordinate coordinate) {
+        // x = y and y = x
+        this.y = coordinate.getY();
+        this.x = coordinate.getX();
+    }
+
     public Spot() {
     }
 
@@ -87,13 +95,14 @@ public class Spot{
         this.name = name;
     }
 
-    public Spot(int x, int y) {
+    public Spot(int y, int x) {
+        // x = y and y = x
         this.x = x;
         this.y = y;
     }
 
     public int getX() {
-        return x;
+        return y;
     }
 
     public void setX(int x) {
@@ -101,7 +110,7 @@ public class Spot{
     }
 
     public int getY() {
-        return y;
+        return x;
     }
 
     public void setY(int y) {
@@ -139,13 +148,17 @@ public class Spot{
 
     @Override
     public String toString() {
-        return name;
+        return name + " x:" + y + " y:" + x;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (o instanceof Coordinate) {
+            Coordinate coordinate = (Coordinate) o;
+            return x == coordinate.getX() && y == coordinate.getY();
+        }
+
         Spot spot = (Spot) o;
         return x == spot.x &&
                 y == spot.y;

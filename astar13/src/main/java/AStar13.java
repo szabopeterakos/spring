@@ -9,6 +9,7 @@ public class AStar13 {
         List<Spot> openSet = new ArrayList<>();
         List<Spot> closedSet = new ArrayList<>();
         List<Spot> path = new ArrayList<>();
+        int timer = 0;
 
         openSet.add(start);
 
@@ -32,7 +33,9 @@ public class AStar13 {
             }
 
             Spot currentSpot = openSet.get(winner);
+            timer++;
 
+            //end
             if (currentSpot.getName().equals(end.getName())) {
                 Spot temp = currentSpot;
                 path.add(temp);
@@ -45,7 +48,7 @@ public class AStar13 {
                 System.out.println("DONE!");
                 System.out.println(path);
 
-                return 1;
+                return timer;
             }
 
             openSet.remove(currentSpot);
@@ -81,9 +84,8 @@ public class AStar13 {
 
     }
 
-
     public static void main(String[] args) {
-        Spot[][] grid = new Spot[6][6];
+        Spot[][] grid = new Spot[7][7];
 
         for (int i = 0; i < grid.length; i++) {
             for (int j = 0; j < grid[i].length; j++) {
@@ -91,11 +93,24 @@ public class AStar13 {
             }
         }
         grid[0][0].setName("s");
-        grid[0][5].setName("x");
+        grid[5][5].setName("x");
         grid[0][3].setWay(false);
+        grid[0][3].setName("||");
+        grid[1][3].setWay(false);
+        grid[1][3].setName("||");
+        grid[2][3].setWay(false);
+        grid[2][3].setName("||");
+
+//        for (int i = 0; i < grid.length; i++) {
+//            for (int j = 0; j < grid[i].length; j++) {
+//                System.out.print(grid[i][j] + "\t");
+//            }
+//            System.out.println();
+//        }
 
         AStar13 aStar13 = new AStar13();
-        System.out.println(aStar13.mazeAlgorithm(grid, grid[0][0], grid[0][5]));
+        System.out.println(aStar13.mazeAlgorithm(grid, grid[0][0], grid[5][5]));
+        System.out.println();
 
         for (int i = 0; i < grid.length; i++) {
             for (int j = 0; j < grid[i].length; j++) {
