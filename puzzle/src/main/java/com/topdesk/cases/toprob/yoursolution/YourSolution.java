@@ -7,9 +7,9 @@ import com.topdesk.cases.toprob.*;
 public class YourSolution implements Solution {
 
     /**
-     * This program can find the best route from room to kitchen and back;
-     * It uses the A-Star algorithm to find the shortest way but just in a static grid.
-     * It can recognise the current grid value can walk or not.
+     * This program can find the best route from the room to the kitchen and back;
+     * It uses the A-Star algorithm to find the shortest way, but just in a static grid.
+     * It can recognise the current grid value is a possible way or not.
      * The dynamic bug appearing is not part of this solution.
      * <p>
      * The maze algorithm creates a list of Spots,
@@ -164,7 +164,7 @@ public class YourSolution implements Solution {
         allSpots.addAll(path);
         Collections.reverse(path);
         allSpots.addAll(path);
-        
+
         List<Instruction> instructionList = new ArrayList<>();
 
         for (int i = 1; i < allSpots.size(); i++) {
