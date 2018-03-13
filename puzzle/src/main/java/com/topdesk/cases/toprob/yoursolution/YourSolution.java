@@ -57,6 +57,7 @@ public class YourSolution implements Solution {
         // -- initialize blocks
 
         // GUI
+        System.out.println("");
         for (int i = 0; i < gridWeb.length; i++) {
             for (int j = 0; j < gridWeb[i].length; j++) {
                 Spot current = gridWeb[i][j];
@@ -74,13 +75,17 @@ public class YourSolution implements Solution {
             }
             System.out.println();
         }
+        System.out.println("");
 
-        mazeAlgorithm(gridWeb, room, kitchen);
+
+        instructionList = mazeAlgorithm(gridWeb, room, kitchen);
+
+        System.out.println(instructionList);
 
         return instructionList;
     }
 
-    public List<Spot> mazeAlgorithm(Spot[][] aGrid, Spot start, Spot end) {
+    public List<Instruction> mazeAlgorithm(Spot[][] aGrid, Spot start, Spot end) {
         List<Spot> openSet = new ArrayList<>();
         List<Spot> closedSet = new ArrayList<>();
         List<Spot> path = new ArrayList<>();
@@ -94,9 +99,6 @@ public class YourSolution implements Solution {
                 aGrid[i][j].setNeighbors(aGrid);
             }
         }
-
-        System.out.println(start);
-        System.out.println(start.getNeighbors());
 
         while (openSet.size() > 0) {
 
@@ -119,10 +121,10 @@ public class YourSolution implements Solution {
                     temp = temp.getParent();
                 }
 
-                System.out.println("DONE!");
-                System.out.println(path);
+//                System.out.println("DONE!");
 
-                return path;
+
+                return instructionsParser(path);
             }
 
             openSet.remove(currentSpot);
@@ -154,8 +156,52 @@ public class YourSolution implements Solution {
         }
 
         System.out.println("NO SOLUTION");
-        return path;
+        return null;
 
+    }
+
+    private List<Instruction> instructionsParser(List<Spot> path) {
+        Collections.reverse(path);
+        List<Spot> allSpots = new ArrayList<>();
+        allSpots.addAll(path);
+        Collections.reverse(path);
+        allSpots.addAll(path);
+
+
+        List<Instruction> instructionList = new ArrayList<>();
+
+        for (int i = 1; i < allSpots.size(); i++) {
+            Spot current = allSpots.get(i);
+            if (allSpots.get(i - 1).getX() == current.getX()) {
+                if (allSpots.get(i - 1).getY() < current.getY()) {
+                    instructionList.add(Instruction.EAST);
+                }
+                if (allSpots.get(i - 1).getY() > current.getY()) {
+                    instructionList.add(Instruction.WEST);
+                }
+            }
+            if (allSpots.get(i - 1).getY() == current.getY()) {
+                if (allSpots.get(i - 1).getX() < current.getX()) {
+                    instructionList.add(Instruction.SOUTH);
+                }
+                if (allSpots.get(i - 1).getX() > current.getX()) {
+                    instructionList.add(Instruction.NORTH);
+                }
+            }
+
+            if (i == allSpots.size() / 2) {
+                instructionList.add(Instruction.PAUSE);
+                instructionList.add(Instruction.PAUSE);
+                instructionList.add(Instruction.PAUSE);
+                instructionList.add(Instruction.PAUSE);
+                instructionList.add(Instruction.PAUSE);
+            }
+        }
+
+//        System.out.println(allSpots);
+//        System.out.println(instructionList);
+
+        return instructionList;
     }
 
 }

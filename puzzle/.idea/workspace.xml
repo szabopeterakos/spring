@@ -15,8 +15,8 @@
       <file leaf-file-name="Instruction.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/topdesk/cases/toprob/Instruction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="5" column="55" lean-forward="false" selection-start-line="5" selection-start-column="55" selection-end-line="5" selection-end-column="55" />
+            <state relative-caret-position="832">
+              <caret line="54" column="36" lean-forward="false" selection-start-line="54" selection-start-column="36" selection-end-line="54" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -55,8 +55,8 @@
       <file leaf-file-name="Spot.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/topdesk/cases/toprob/Spot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="150" column="44" lean-forward="false" selection-start-line="150" selection-start-column="44" selection-end-line="150" selection-end-column="44" />
+            <state relative-caret-position="123">
+              <caret line="57" column="46" lean-forward="true" selection-start-line="57" selection-start-column="46" selection-end-line="57" selection-end-column="46" />
               <folding>
                 <element signature="e#1919#1920#0" expanded="true" />
                 <element signature="e#1951#1952#0" expanded="true" />
@@ -67,21 +67,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="YourSolution.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="YourSolution.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/topdesk/cases/toprob/yoursolution/YourSolution.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="865">
-              <caret line="156" column="19" lean-forward="false" selection-start-line="156" selection-start-column="19" selection-end-line="156" selection-end-column="19" />
+            <state relative-caret-position="130">
+              <caret line="82" column="44" lean-forward="true" selection-start-line="82" selection-start-column="44" selection-end-line="82" selection-end-column="44" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SolutionTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SolutionTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/topdesk/cases/toprob/SolutionTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="53" column="19" lean-forward="false" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="19" />
+            <state relative-caret-position="-2346">
+              <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -98,6 +98,11 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>System.out</find>
+    </findStrings>
+  </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
       <projects_view />
@@ -108,8 +113,8 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/java/com/topdesk/cases/toprob/Solution.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/topdesk/cases/toprob/yoursolution/Spot.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/topdesk/cases/toprob/SolutionTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/topdesk/cases/toprob/Spot.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/topdesk/cases/toprob/SolutionTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/topdesk/cases/toprob/yoursolution/YourSolution.java" />
       </list>
     </option>
@@ -264,7 +269,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.SolutionTest.small_grid">
+  <component name="RunManager" selected="JUnit.SolutionTest">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -361,6 +366,31 @@
       <envs />
       <patterns />
     </configuration>
+    <configuration name="SolutionTest.minimum_grid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.topdesk.cases.toprob.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="rob-in-the-kitchen" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.topdesk.cases.toprob" />
+      <option name="MAIN_CLASS_NAME" value="com.topdesk.cases.toprob.SolutionTest" />
+      <option name="METHOD_NAME" value="minimum_grid" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
     <configuration name="SolutionTest.small_grid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -374,31 +404,6 @@
       <option name="PACKAGE_NAME" value="com.topdesk.cases.toprob" />
       <option name="MAIN_CLASS_NAME" value="com.topdesk.cases.toprob.SolutionTest" />
       <option name="METHOD_NAME" value="small_grid" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="SolutionTest.small_grid_bug_everywhere" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.topdesk.cases.toprob.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="rob-in-the-kitchen" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.topdesk.cases.toprob" />
-      <option name="MAIN_CLASS_NAME" value="com.topdesk.cases.toprob.SolutionTest" />
-      <option name="METHOD_NAME" value="small_grid_bug_everywhere" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -474,17 +479,17 @@
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JUnit.SolutionTest.big_grid" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.SolutionTest.small_grid" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.SolutionTest.small_grid_bug_everywhere" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.SolutionTest.annoying_bug" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.SolutionTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.SolutionTest.annoying_bug" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.SolutionTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.SolutionTest.minimum_grid" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.SolutionTest.small_grid" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.SolutionTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.SolutionTest.annoying_bug" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.SolutionTest.big_grid" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.SolutionTest.small_grid_bug_everywhere" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.SolutionTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.SolutionTest.minimum_grid" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.SolutionTest.small_grid" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.SolutionTest.annoying_bug" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.SolutionTest.big_grid" />
       </list>
     </recent_temporary>
   </component>
@@ -509,35 +514,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SolutionTest - 2018.03.13 at 17h 16m 20s.xml">
+    <history-entry file="SolutionTest - 2018.03.13 at 18h 13m 48s.xml">
       <configuration name="SolutionTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SolutionTest - 2018.03.13 at 17h 16m 59s.xml">
-      <configuration name="SolutionTest" configurationId="JUnit" />
+    <history-entry file="SolutionTest_minimum_grid - 2018.03.13 at 18h 07m 48s.xml">
+      <configuration name="SolutionTest.minimum_grid" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SolutionTest - 2018.03.13 at 17h 18m 01s.xml">
-      <configuration name="SolutionTest" configurationId="JUnit" />
+    <history-entry file="SolutionTest_minimum_grid - 2018.03.13 at 18h 08m 09s.xml">
+      <configuration name="SolutionTest.minimum_grid" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SolutionTest - 2018.03.13 at 17h 19m 48s.xml">
-      <configuration name="SolutionTest" configurationId="JUnit" />
+    <history-entry file="SolutionTest_minimum_grid - 2018.03.13 at 18h 08m 26s.xml">
+      <configuration name="SolutionTest.minimum_grid" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SolutionTest - 2018.03.13 at 17h 24m 03s.xml">
-      <configuration name="SolutionTest" configurationId="JUnit" />
+    <history-entry file="SolutionTest_minimum_grid - 2018.03.13 at 18h 10m 03s.xml">
+      <configuration name="SolutionTest.minimum_grid" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SolutionTest_annoying_bug - 2018.03.13 at 17h 13m 15s.xml">
-      <configuration name="SolutionTest.annoying_bug" configurationId="JUnit" />
+    <history-entry file="SolutionTest_minimum_grid - 2018.03.13 at 18h 10m 20s.xml">
+      <configuration name="SolutionTest.minimum_grid" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SolutionTest_annoying_bug - 2018.03.13 at 17h 13m 39s.xml">
-      <configuration name="SolutionTest.annoying_bug" configurationId="JUnit" />
+    <history-entry file="SolutionTest_minimum_grid - 2018.03.13 at 18h 10m 58s.xml">
+      <configuration name="SolutionTest.minimum_grid" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SolutionTest_annoying_bug - 2018.03.13 at 17h 15m 02s.xml">
-      <configuration name="SolutionTest.annoying_bug" configurationId="JUnit" />
+    <history-entry file="SolutionTest_minimum_grid - 2018.03.13 at 18h 12m 24s.xml">
+      <configuration name="SolutionTest.minimum_grid" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SolutionTest_annoying_bug - 2018.03.13 at 17h 15m 58s.xml">
-      <configuration name="SolutionTest.annoying_bug" configurationId="JUnit" />
+    <history-entry file="SolutionTest_minimum_grid - 2018.03.13 at 18h 13m 27s.xml">
+      <configuration name="SolutionTest.minimum_grid" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SolutionTest_small_grid - 2018.03.13 at 17h 24m 10s.xml">
-      <configuration name="SolutionTest.small_grid" configurationId="JUnit" />
+    <history-entry file="SolutionTest_minimum_grid - 2018.03.13 at 18h 13m 41s.xml">
+      <configuration name="SolutionTest.minimum_grid" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
@@ -810,18 +815,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/topdesk/cases/toprob/Instruction.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/internal/runners/model/ReflectiveCallable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="5" column="55" lean-forward="false" selection-start-line="5" selection-start-column="55" selection-end-line="5" selection-end-column="55" />
+        <state relative-caret-position="208">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/topdesk/cases/toprob/Coordinate.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/topdesk/cases/toprob/Instruction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="9" column="19" lean-forward="false" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+        <state relative-caret-position="832">
+          <caret line="54" column="36" lean-forward="false" selection-start-line="54" selection-start-column="36" selection-end-line="54" selection-end-column="36" />
           <folding />
         </state>
       </provider>
@@ -834,10 +839,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/internal/runners/model/ReflectiveCallable.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/topdesk/cases/toprob/Coordinate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        <state relative-caret-position="144">
+          <caret line="9" column="19" lean-forward="false" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
           <folding />
         </state>
       </provider>
@@ -852,8 +857,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/topdesk/cases/toprob/Spot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="150" column="44" lean-forward="false" selection-start-line="150" selection-start-column="44" selection-end-line="150" selection-end-column="44" />
+        <state relative-caret-position="123">
+          <caret line="57" column="46" lean-forward="true" selection-start-line="57" selection-start-column="46" selection-end-line="57" selection-end-column="46" />
           <folding>
             <element signature="e#1919#1920#0" expanded="true" />
             <element signature="e#1951#1952#0" expanded="true" />
@@ -863,21 +868,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/topdesk/cases/toprob/SolutionTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/topdesk/cases/toprob/yoursolution/YourSolution.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="53" column="19" lean-forward="false" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="130">
+          <caret line="82" column="44" lean-forward="true" selection-start-line="82" selection-start-column="44" selection-end-line="82" selection-end-column="44" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/topdesk/cases/toprob/yoursolution/YourSolution.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/topdesk/cases/toprob/SolutionTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="865">
-          <caret line="156" column="19" lean-forward="false" selection-start-line="156" selection-start-column="19" selection-end-line="156" selection-end-column="19" />
-          <folding />
+        <state relative-caret-position="-2346">
+          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
