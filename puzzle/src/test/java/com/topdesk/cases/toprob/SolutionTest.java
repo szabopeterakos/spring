@@ -102,7 +102,7 @@ public class SolutionTest {
                 "rBDFHJLNk",
                 ".ACEGIKMO");
 
-//        test(grid, 0);
+        test(grid, 0);
         test(grid, 1);
     }
 

@@ -10,41 +10,31 @@ public class Spot {
     private double f;
     private double g;
     private double h;
-
     private int x;
     private int y;
     private boolean way = true;
-
-    public void setWay(boolean way) {
-        this.way = way;
-    }
-
-    public boolean isWay() {
-
-        return way;
-    }
-
     private List<Spot> neighbors = new ArrayList<>();
     private Spot parent;
 
-
-    public void setNeighbors(List<Spot> neighbors) {
-        this.neighbors = neighbors;
+    public Spot() {
     }
 
-    public Spot getParent() {
-        return parent;
+    public Spot(int y, int x) {
+        this.x = x;
+        this.y = y;
     }
 
-    public void setParent(Spot parent) {
-        this.parent = parent;
+    public Spot(String name) {
+        this.name = name;
     }
 
-    //heuristic
-    public static double heutistic(Spot start, Spot end) {
-        double dx = Math.abs(start.x - end.x);
-        double dy = Math.abs(start.y - end.y);
-        return Math.sqrt(dx * dx + dy * dy);
+    public Spot(Coordinate coordinate) {
+        this.y = coordinate.getY();
+        this.x = coordinate.getX();
+    }
+
+    public List<Spot> getNeighbors() {
+        return neighbors;
     }
 
     public void setNeighbors(Spot[][] grid) {
@@ -74,31 +64,30 @@ public class Spot {
         this.neighbors = spots;
     }
 
-    public List<Spot> getNeighbors() {
-        return neighbors;
+    public void setNeighbors(List<Spot> neighbors) {
+        this.neighbors = neighbors;
     }
 
-    public Spot(String name) {
-        this.name = name;
+    public Spot getParent() {
+        return parent;
     }
 
-    public Spot(Coordinate coordinate) {
-        // x = y and y = x
-        this.y = coordinate.getY();
-        this.x = coordinate.getX();
+    public void setParent(Spot parent) {
+        this.parent = parent;
     }
 
-    public Spot() {
+    public static double heutistic(Spot start, Spot end) {
+        double dx = Math.abs(start.x - end.x);
+        double dy = Math.abs(start.y - end.y);
+        return Math.sqrt(dx * dx + dy * dy);
+    }
+
+    public String getName() {
+        return name;
     }
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Spot(int y, int x) {
-        // x = y and y = x
-        this.x = x;
-        this.y = y;
     }
 
     public int getX() {
@@ -129,11 +118,6 @@ public class Spot {
         this.h = h;
     }
 
-    public String getName() {
-
-        return name;
-    }
-
     public double getF() {
         return f;
     }
@@ -144,6 +128,14 @@ public class Spot {
 
     public double getH() {
         return h;
+    }
+
+    public void setWay(boolean way) {
+        this.way = way;
+    }
+
+    public boolean isWay() {
+        return way;
     }
 
     @Override
@@ -166,7 +158,6 @@ public class Spot {
 
     @Override
     public int hashCode() {
-
         return Objects.hash(x, y);
     }
 }
