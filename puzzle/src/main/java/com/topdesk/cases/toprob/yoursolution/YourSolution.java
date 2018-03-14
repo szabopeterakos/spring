@@ -74,7 +74,11 @@ public class YourSolution implements Solution {
         gui(gridWeb, room, kitchen, holeSpots, bug);
 
         // maze algorithm
-        instructionList = mazeAlgorithm(gridWeb, room, kitchen);
+        List<Spot> pathOneWay = mazeAlgorithm(gridWeb, room, kitchen);
+        List<Spot> path = wholeRouteCreater(pathOneWay);
+
+//        System.out.println(instructionsParser(pathOneWay));
+        instructionList = realtimeWalker(path, grid, time);
 
         // check values
         System.out.println(instructionList);
@@ -82,7 +86,7 @@ public class YourSolution implements Solution {
         return instructionList;
     }
 
-    public List<Instruction> mazeAlgorithm(Spot[][] aGrid, Spot start, Spot end) {
+    public List<Spot> mazeAlgorithm(Spot[][] aGrid, Spot start, Spot end) {
         List<Spot> openSet = new ArrayList<>();
         List<Spot> closedSet = new ArrayList<>();
         List<Spot> path = new ArrayList<>();
@@ -119,7 +123,7 @@ public class YourSolution implements Solution {
                     temp = temp.getParent();
                 }
 
-                return instructionsParser(path);
+                return path;
             }
 
             // re check possibilities
@@ -154,16 +158,25 @@ public class YourSolution implements Solution {
 
         // if no solution
         System.out.println("NO SOLUTION");
-        return instructionsParser(path);
+        return path;
 
     }
 
-    private List<Instruction> instructionsParser(List<Spot> path) {
+    private List<Spot> wholeRouteCreater(List<Spot> path) {
         Collections.reverse(path);
         List<Spot> allSpots = new ArrayList<>();
         allSpots.addAll(path);
+        allSpots.add(path.get(path.size() - 1));
+        allSpots.add(path.get(path.size() - 1));
+        allSpots.add(path.get(path.size() - 1));
+        allSpots.add(path.get(path.size() - 1));
         Collections.reverse(path);
         allSpots.addAll(path);
+
+        return allSpots;
+    }
+
+    private List<Instruction> instructionsParser(List<Spot> allSpots) {
 
         List<Instruction> instructionList = new ArrayList<>();
 
@@ -176,6 +189,9 @@ public class YourSolution implements Solution {
                 if (allSpots.get(i - 1).getY() > current.getY()) {
                     instructionList.add(Instruction.WEST);
                 }
+                if (allSpots.get(i - 1).getY() == current.getY()) {
+                    instructionList.add(Instruction.PAUSE);
+                }
             }
             if (allSpots.get(i - 1).getY() == current.getY()) {
                 if (allSpots.get(i - 1).getX() < current.getX()) {
@@ -186,11 +202,11 @@ public class YourSolution implements Solution {
                 }
             }
 
-            if (i == allSpots.size() / 2) {
-                for (int j = 0; j < 5; j++) {
-                    instructionList.add(Instruction.PAUSE);
-                }
-            }
+//            if (i == allSpots.size() / 2) {
+//                for (int j = 0; j < 5; j++) {
+//                    instructionList.add(Instruction.PAUSE);
+//                }
+//            }
         }
 
         return instructionList;
@@ -216,6 +232,28 @@ public class YourSolution implements Solution {
             System.out.println();
         }
         System.out.println("");
+    }
+
+    private List<Instruction> realtimeWalker(List<Spot> route, Grid grid, int time) {
+        List<Spot> currentRout = route;
+        boolean isEnd = false;
+
+        while (!isEnd) {
+            for (int i = 0; i < currentRout.size() - 1; i++) {
+                Coordinate bugHere = grid.getBug(i + 1 + time);
+                Spot currentStep = currentRout.get(i);
+                Spot nextStep = currentRout.get(i + 1);
+                if (bugHere.getY() == nextStep.getX() && bugHere.getX() == nextStep.getY()) {
+                    currentRout.add(i, currentStep);
+                    break;
+                }
+                isEnd = true;
+            }
+        }
+
+        List<Instruction> list = instructionsParser(currentRout);
+        return list;
+
     }
 
 }

@@ -15,7 +15,7 @@
       <file leaf-file-name="Instruction.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/topdesk/cases/toprob/Instruction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="832">
+            <state relative-caret-position="0">
               <caret line="54" column="36" lean-forward="false" selection-start-line="54" selection-start-column="36" selection-end-line="54" selection-end-column="36" />
               <folding />
             </state>
@@ -45,7 +45,7 @@
       <file leaf-file-name="Grid.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/topdesk/cases/toprob/Grid.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="481">
+            <state relative-caret-position="1088">
               <caret line="68" column="18" lean-forward="false" selection-start-line="68" selection-start-column="14" selection-end-line="68" selection-end-column="18" />
               <folding />
             </state>
@@ -56,7 +56,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/topdesk/cases/toprob/Spot.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="123">
-              <caret line="57" column="46" lean-forward="true" selection-start-line="57" selection-start-column="46" selection-end-line="57" selection-end-column="46" />
+              <caret line="57" column="46" lean-forward="false" selection-start-line="57" selection-start-column="46" selection-end-line="57" selection-end-column="46" />
               <folding>
                 <element signature="e#1919#1920#0" expanded="true" />
                 <element signature="e#1951#1952#0" expanded="true" />
@@ -67,21 +67,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="YourSolution.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="YourSolution.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/topdesk/cases/toprob/yoursolution/YourSolution.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+            <state relative-caret-position="237">
+              <caret line="236" column="59" lean-forward="false" selection-start-line="236" selection-start-column="59" selection-end-line="236" selection-end-column="59" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SolutionTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SolutionTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/topdesk/cases/toprob/SolutionTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-512">
-              <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+            <state relative-caret-position="280">
+              <caret line="105" column="5" lean-forward="true" selection-start-line="105" selection-start-column="5" selection-end-line="105" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -114,8 +114,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/topdesk/cases/toprob/Solution.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/topdesk/cases/toprob/yoursolution/Spot.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/topdesk/cases/toprob/Spot.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/topdesk/cases/toprob/SolutionTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/topdesk/cases/toprob/yoursolution/YourSolution.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/topdesk/cases/toprob/SolutionTest.java" />
       </list>
     </option>
   </component>
@@ -132,7 +132,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="width" value="1920" />
     <option name="height" value="1080" />
   </component>
@@ -151,9 +151,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -239,7 +238,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -269,7 +269,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.SolutionTest">
+  <component name="RunManager" selected="JUnit.SolutionTest.annoying_bug">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -485,11 +485,11 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.SolutionTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.SolutionTest.minimum_grid" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.SolutionTest.annoying_bug" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.SolutionTest" />
         <item index="2" class="java.lang.String" itemvalue="JUnit.SolutionTest.small_grid" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.SolutionTest.annoying_bug" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.SolutionTest.big_grid" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.SolutionTest.big_grid" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.SolutionTest.minimum_grid" />
       </list>
     </recent_temporary>
   </component>
@@ -514,42 +514,42 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SolutionTest - 2018.03.13 at 18h 13m 48s.xml">
+    <history-entry file="SolutionTest - 2018.03.14 at 07h 43m 39s.xml">
       <configuration name="SolutionTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SolutionTest - 2018.03.13 at 18h 33m 44s.xml">
-      <configuration name="SolutionTest" configurationId="JUnit" />
+    <history-entry file="SolutionTest_annoying_bug - 2018.03.14 at 07h 48m 23s.xml">
+      <configuration name="SolutionTest.annoying_bug" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SolutionTest - 2018.03.13 at 18h 43m 29s.xml">
-      <configuration name="SolutionTest" configurationId="JUnit" />
+    <history-entry file="SolutionTest_annoying_bug - 2018.03.14 at 07h 48m 30s.xml">
+      <configuration name="SolutionTest.annoying_bug" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SolutionTest - 2018.03.13 at 19h 53m 42s.xml">
-      <configuration name="SolutionTest" configurationId="JUnit" />
+    <history-entry file="SolutionTest_annoying_bug - 2018.03.14 at 07h 48m 40s.xml">
+      <configuration name="SolutionTest.annoying_bug" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SolutionTest_minimum_grid - 2018.03.13 at 18h 10m 03s.xml">
-      <configuration name="SolutionTest.minimum_grid" configurationId="JUnit" />
+    <history-entry file="SolutionTest_annoying_bug - 2018.03.14 at 07h 48m 53s.xml">
+      <configuration name="SolutionTest.annoying_bug" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SolutionTest_minimum_grid - 2018.03.13 at 18h 10m 20s.xml">
-      <configuration name="SolutionTest.minimum_grid" configurationId="JUnit" />
+    <history-entry file="SolutionTest_small_grid - 2018.03.14 at 07h 42m 17s.xml">
+      <configuration name="SolutionTest.small_grid" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SolutionTest_minimum_grid - 2018.03.13 at 18h 10m 58s.xml">
-      <configuration name="SolutionTest.minimum_grid" configurationId="JUnit" />
+    <history-entry file="SolutionTest_small_grid - 2018.03.14 at 07h 42m 22s.xml">
+      <configuration name="SolutionTest.small_grid" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SolutionTest_minimum_grid - 2018.03.13 at 18h 12m 24s.xml">
-      <configuration name="SolutionTest.minimum_grid" configurationId="JUnit" />
+    <history-entry file="SolutionTest_small_grid - 2018.03.14 at 07h 42m 29s.xml">
+      <configuration name="SolutionTest.small_grid" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SolutionTest_minimum_grid - 2018.03.13 at 18h 13m 27s.xml">
-      <configuration name="SolutionTest.minimum_grid" configurationId="JUnit" />
+    <history-entry file="SolutionTest_small_grid - 2018.03.14 at 07h 43m 17s.xml">
+      <configuration name="SolutionTest.small_grid" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SolutionTest_minimum_grid - 2018.03.13 at 18h 13m 41s.xml">
-      <configuration name="SolutionTest.minimum_grid" configurationId="JUnit" />
+    <history-entry file="SolutionTest_small_grid - 2018.03.14 at 07h 43m 29s.xml">
+      <configuration name="SolutionTest.small_grid" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="4887000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -560,12 +560,12 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969216" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40145102" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2630458" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35693848" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -589,11 +589,84 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="17" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/topdesk/cases/toprob/yoursolution/YourSolution.java</url>
+          <line>236</line>
+          <properties class="com.topdesk.cases.toprob.yoursolution.YourSolution" method="realtimeWalker">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="23" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/topdesk/cases/toprob/Instruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="832">
+          <caret line="54" column="36" lean-forward="false" selection-start-line="54" selection-start-column="36" selection-end-line="54" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/topdesk/cases/toprob/Solution.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="512">
+          <caret line="32" column="47" lean-forward="false" selection-start-line="32" selection-start-column="43" selection-end-line="32" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/topdesk/cases/toprob/Coordinate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="9" column="19" lean-forward="false" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/topdesk/cases/toprob/Spot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="752">
+          <caret line="57" column="46" lean-forward="true" selection-start-line="57" selection-start-column="46" selection-end-line="57" selection-end-column="46" />
+          <folding>
+            <element signature="e#1919#1920#0" expanded="true" />
+            <element signature="e#1951#1952#0" expanded="true" />
+            <element signature="e#2956#2957#0" expanded="true" />
+            <element signature="e#3007#3008#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/topdesk/cases/toprob/Grid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1088">
+          <caret line="68" column="18" lean-forward="false" selection-start-line="68" selection-start-column="14" selection-end-line="68" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/topdesk/cases/toprob/SolutionTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/topdesk/cases/toprob/yoursolution/YourSolution.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/topdesk/cases/toprob/Instruction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
@@ -807,26 +880,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/internal/runners/model/ReflectiveCallable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/topdesk/cases/toprob/Instruction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="832">
+        <state relative-caret-position="0">
           <caret line="54" column="36" lean-forward="false" selection-start-line="54" selection-start-column="36" selection-end-line="54" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/topdesk/cases/toprob/Solution.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
-          <caret line="32" column="47" lean-forward="false" selection-start-line="32" selection-start-column="43" selection-end-line="32" selection-end-column="47" />
           <folding />
         </state>
       </provider>
@@ -841,8 +898,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/topdesk/cases/toprob/Grid.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
+        <state relative-caret-position="1088">
           <caret line="68" column="18" lean-forward="false" selection-start-line="68" selection-start-column="14" selection-end-line="68" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/internal/runners/model/ReflectiveCallable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/runners/ParentRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="327" column="0" lean-forward="false" selection-start-line="327" selection-start-column="0" selection-end-line="327" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -850,7 +923,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/topdesk/cases/toprob/Spot.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="123">
-          <caret line="57" column="46" lean-forward="true" selection-start-line="57" selection-start-column="46" selection-end-line="57" selection-end-column="46" />
+          <caret line="57" column="46" lean-forward="false" selection-start-line="57" selection-start-column="46" selection-end-line="57" selection-end-column="46" />
           <folding>
             <element signature="e#1919#1920#0" expanded="true" />
             <element signature="e#1951#1952#0" expanded="true" />
@@ -860,21 +933,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/topdesk/cases/toprob/SolutionTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/topdesk/cases/toprob/Solution.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-512">
-          <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="502">
+          <caret line="32" column="47" lean-forward="false" selection-start-line="32" selection-start-column="43" selection-end-line="32" selection-end-column="47" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/topdesk/cases/toprob/yoursolution/YourSolution.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        <state relative-caret-position="237">
+          <caret line="236" column="59" lean-forward="false" selection-start-line="236" selection-start-column="59" selection-end-line="236" selection-end-column="59" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/topdesk/cases/toprob/SolutionTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="105" column="5" lean-forward="true" selection-start-line="105" selection-start-column="5" selection-end-line="105" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
